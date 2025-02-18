@@ -1,0 +1,125 @@
+
+Corpus Calculation Analysis for K = 1.0%
+==================================================
+
+Initial Setup:
+Month: December 2021
+Number of selected authors: 1
+Total predictions in month: 7
+
+Daily Corpus Calculation Details:
+==================================================
+
+Date: 2021-12-03
+Starting corpus value: 1.000000
+
+Trades for this day:
+------------------------------
+
+Trade 8277:
+Author: Edelweiss
+Expected Return: 10.980119
+Actual Return: -0.007446
+Corpus after trade: 0.992554
+
+End of day corpus value: 0.992554
+
+Date: 2021-12-08
+Starting corpus value: 0.992554
+
+Trades for this day:
+------------------------------
+
+Trade 4029:
+Author: Edelweiss
+Expected Return: 67.355779
+Actual Return: -0.027464
+Corpus after trade: 0.965294
+
+End of day corpus value: 0.965294
+
+Date: 2021-12-10
+Starting corpus value: 0.965294
+
+Trades for this day:
+------------------------------
+
+Trade 13119:
+Author: Edelweiss
+Expected Return: 10.952245
+Actual Return: -0.003776
+Corpus after trade: 0.961649
+
+End of day corpus value: 0.961649
+
+Date: 2021-12-13
+Starting corpus value: 0.961649
+
+Trades for this day:
+------------------------------
+
+Trade 27188:
+Author: Edelweiss
+Expected Return: 65.233726
+Actual Return: -0.052635
+Corpus after trade: 0.911033
+
+End of day corpus value: 0.911033
+
+Date: 2021-12-24
+Starting corpus value: 0.911033
+
+Trades for this day:
+------------------------------
+
+Trade 11030:
+Author: Edelweiss
+Expected Return: 11.006040
+Actual Return: 0.012018
+Corpus after trade: 0.921982
+
+End of day corpus value: 0.921982
+
+Date: 2021-12-29
+Starting corpus value: 0.921982
+
+Trades for this day:
+------------------------------
+
+Trade 34957:
+Author: Edelweiss
+Expected Return: 14.727034
+Actual Return: -0.016251
+Corpus after trade: 0.906998
+
+End of day corpus value: 0.906998
+
+Date: 2021-12-31
+Starting corpus value: 0.906998
+
+Trades for this day:
+------------------------------
+
+Trade 29861:
+Author: Edelweiss
+Expected Return: 11.150526
+Actual Return: 0.004675
+Corpus after trade: 0.911238
+
+End of day corpus value: 0.911238
+
+Final Corpus Analysis:
+==================================================
+Starting corpus: 1.0
+Final corpus: 0.911238
+Total return: -0.088762 (-8.88%)
+
+Daily Summary Statistics:
+        date  corpus_value  num_trades  daily_return
+0 2021-12-03      0.992554           1     -0.007446
+1 2021-12-08      0.965294           1     -0.027464
+2 2021-12-10      0.961649           1     -0.003776
+3 2021-12-13      0.911033           1     -0.052635
+4 2021-12-24      0.921982           1      0.012018
+5 2021-12-29      0.906998           1     -0.016251
+6 2021-12-31      0.911238           1      0.004675

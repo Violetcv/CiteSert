@@ -85,7 +85,7 @@ def debug_month(df_train, df_test, k_percent, target_date, output_dir='debug_out
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    output_file = os.path.join(output_dir, f'debug_{target_date.strftime("%Y_%m")}_k{k_percent}.txt')
+    output_file = os.path.join(output_dir, f'corpus_calculation_k{k_percent}.txt')
     
     # Create a string buffer to capture all output
     output_buffer = StringIO()
@@ -93,22 +93,17 @@ def debug_month(df_train, df_test, k_percent, target_date, output_dir='debug_out
     sys.stdout = output_buffer
     
     try:
-        # Run analysis
-        training_end = target_date - timedelta(days=1)
-        training_start = training_end - pd.DateOffset(months=14)
+        print(f"\nCorpus Calculation Analysis for K = {k_percent}%")
+        print("=" * 50)
         
-        print(f"\nAnalyzing K = {k_percent}%")
-        print(f"Training period: {training_start} to {training_end}")
-        print(f"Test month: {target_date}")
-        
-        # Get best authors
-        best_authors = get_best_authors(df_train, training_start, training_end, k_percent)
-        print("\nBest Authors Selected:")
-        print(best_authors.to_string())
-
         # Get month data
         month_start = target_date.replace(day=1)
         month_end = (month_start + pd.offsets.MonthEnd(1))
+        
+        # Get best authors
+        training_end = target_date - timedelta(days=1)
+        training_start = training_end - pd.DateOffset(months=14)
+        best_authors = get_best_authors(df_train, training_start, training_end, k_percent)
         
         month_df = df_test[
             (df_test['date'] >= month_start) & 
@@ -116,57 +111,57 @@ def debug_month(df_train, df_test, k_percent, target_date, output_dir='debug_out
             (df_test['author'].isin(best_authors['author']))
         ].copy()
         
-        print(f"\nMonth Data Summary:")
-        print(f"Total predictions: {len(month_df)}")
-        print(f"Unique authors: {month_df['author'].nunique()}")
-        print(f"Trading days: {month_df['date'].nunique()}")
-
-        if month_df.empty:
-            print("No data for this month")
-            return pd.DataFrame()
+        print(f"\nInitial Setup:")
+        print(f"Month: {month_start.strftime('%B %Y')}")
+        print(f"Number of selected authors: {len(best_authors)}")
+        print(f"Total predictions in month: {len(month_df)}")
         
-        # Calculate and log daily statistics
-        print("\nDaily Trading Statistics:")
+        # Corpus calculation details
+        print("\nDaily Corpus Calculation Details:")
+        print("=" * 50)
+        
+        corpus_value = 1.0  # Starting corpus value
+        daily_corpus_values = []
+        
         for date, day_data in month_df.groupby('date'):
-            print(f"\nDate: {date}")
-            print(f"Number of trades: {len(day_data)}")
-            print(f"Unique authors: {day_data['author'].nunique()}")
-            print("Performance metrics:")
-            print(f"- Mean expected return: {day_data['expected_return'].mean():.6f}")
-            print(f"- Mean actual return: {day_data['actual_return'].mean():.6f}")
+            print(f"\nDate: {date.strftime('%Y-%m-%d')}")
+            print(f"Starting corpus value: {corpus_value:.6f}")
             
-            # Calculate success rate
-            success_rate = (np.sign(day_data['expected_return']) == 
-                          np.sign(day_data['actual_return'])).mean()
-            print(f"- Prediction success rate: {success_rate:.2%}")
+            print("\nTrades for this day:")
+            print("-" * 30)
+            
+            for idx, trade in day_data.iterrows():
+                print(f"\nTrade {idx}:")
+                print(f"Author: {trade['author']}")
+                print(f"Expected Return: {trade['expected_return']:.6f}")
+                print(f"Actual Return: {trade['actual_return']:.6f}")
+                
+                # Update corpus
+                trade_impact = trade['actual_return']
+                corpus_value *= (1 + trade_impact)
+                print(f"Corpus after trade: {corpus_value:.6f}")
+            
+            daily_corpus_values.append({
+                'date': date,
+                'corpus_value': corpus_value,
+                'num_trades': len(day_data),
+                'daily_return': day_data['actual_return'].mean()
+            })
+            
+            print(f"\nEnd of day corpus value: {corpus_value:.6f}")
         
-        # Calculate monthly performance
-        print("\nCalculating Monthly Performance:")
-        monthly_perf = calculate_monthly_performance(df_test, best_authors, target_date)
+        print("\nFinal Corpus Analysis:")
+        print("=" * 50)
+        print(f"Starting corpus: 1.0")
+        print(f"Final corpus: {corpus_value:.6f}")
+        print(f"Total return: {(corpus_value - 1.0):.6f} ({(corpus_value - 1.0)*100:.2f}%)")
         
-        if not monthly_perf.empty:
-            # Create daily results for plotting
-            print("\nMonthly Performance Summary:")
-            print(monthly_perf.to_string())
-
-            # Calculate additional statistics
-            print("\nAggregate Statistics:")
-            print(f"Mean performance: {monthly_perf['mean_performance'].mean():.6f}")
-            print(f"Total predictions: {monthly_perf['count'].sum()}")
-            print(f"Corpus return: {monthly_perf['corpus_return'].iloc[0]:.6f}")
-            
-            daily_results = []
-            for date, day_data in month_df.groupby('date'):
-                daily_results.append({
-                    'date': date,
-                    'num_trades': len(day_data),
-                    'mean_performance': day_data['performance'].mean() if 'performance' in day_data else None
-                })
-            daily_results_df = pd.DataFrame(daily_results)
-            
-            # Generate plots
-            plot_daily_metrics(daily_results_df, month_df, k_percent, target_date, output_dir)
-            
+        # Convert to DataFrame for additional analysis
+        daily_summary = pd.DataFrame(daily_corpus_values)
+        
+        print("\nDaily Summary Statistics:")
+        print(daily_summary.to_string())
+        
     finally:
         # Restore stdout and save output
         sys.stdout = original_stdout
@@ -174,9 +169,9 @@ def debug_month(df_train, df_test, k_percent, target_date, output_dir='debug_out
         with open(output_file, 'w') as f:
             f.write(output_buffer.getvalue())
         
-        print(f"Debug output saved to {output_file}")
+        print(f"Corpus calculation details saved to {output_file}")
     
-    return monthly_perf
+    return daily_summary
 
 if __name__ == "__main__":
     # Load your data
@@ -198,7 +193,7 @@ if __name__ == "__main__":
         pd.to_datetime('2021-12-01')
     ]
     
-    k_values = [1.0, 5.0, 15.0, 25.0]
+    k_values = [25.0]
     
     for target_date in months_to_debug:
         print(f"\nDebugging month: {target_date.strftime('%Y-%m')}")
