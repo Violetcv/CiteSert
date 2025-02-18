@@ -1,0 +1,232 @@
+DETAILED DEBUGGING FOR K=15.0%
+==================================================
+
+Training Period: 2020-09-30 00:00:00 to 2021-11-30 00:00:00
+Test Period: 2021-12-01 00:00:00 to 2021-12-31 00:00:00
+
+AUTHOR SELECTION PROCESS
+------------------------------
+Training data shape: (4517, 7)
+Unique authors in training: 34
+
+TOP SELECTED AUTHORS:
+             author  total_perf  mean_perf  num_predictions
+11        Edelweiss    0.399642   0.002092              191
+2   Arihant Capital    0.192589   0.010136               19
+14  HDFC Securities    0.106038   0.017673                6
+20            Karvy    0.096419   0.007417               13
+30        Sharekhan    0.067913   0.000808               84
+7     CD Equisearch    0.057155   0.002485               23
+
+DECEMBER TRADING ANALYSIS
+------------------------------
+
+DATE: 2021-12-03
+Starting corpus: 1.000000
+Number of trades: 1
+
+Trade 8277:
+Author: Edelweiss
+Expected Return: 10.980119
+Actual Return: -0.007446
+Sign match: False
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: -0.001962
+
+Daily Summary:
+  Total profit/loss: -0.001962
+  Old corpus: 1.000000
+  New corpus: 0.998038
+  Daily return: -0.1962%
+--------------------------------------------------
+
+DATE: 2021-12-08
+Starting corpus: 0.998038
+Number of trades: 1
+
+Trade 4029:
+Author: Edelweiss
+Expected Return: 67.355779
+Actual Return: -0.027464
+Sign match: False
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: -0.006966
+
+Daily Summary:
+  Total profit/loss: -0.006966
+  Old corpus: 0.998038
+  New corpus: 0.991072
+  Daily return: -0.6980%
+--------------------------------------------------
+
+DATE: 2021-12-10
+Starting corpus: 0.991072
+Number of trades: 1
+
+Trade 13119:
+Author: Edelweiss
+Expected Return: 10.952245
+Actual Return: -0.003776
+Sign match: False
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: -0.001044
+
+Daily Summary:
+  Total profit/loss: -0.001044
+  Old corpus: 0.991072
+  New corpus: 0.990028
+  Daily return: -0.1053%
+--------------------------------------------------
+
+DATE: 2021-12-13
+Starting corpus: 0.990028
+Number of trades: 1
+
+Trade 27188:
+Author: Edelweiss
+Expected Return: 65.233726
+Actual Return: -0.052635
+Sign match: False
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: -0.013259
+
+Daily Summary:
+  Total profit/loss: -0.013259
+  Old corpus: 0.990028
+  New corpus: 0.976770
+  Daily return: -1.3392%
+--------------------------------------------------
+
+DATE: 2021-12-16
+Starting corpus: 0.976770
+Number of trades: 1
+
+Trade 3585:
+Author: CD Equisearch
+Expected Return: -13.606911
+Actual Return: -0.034475
+Sign match: True
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: -1.0
+  Trade return: 0.008519
+
+Daily Summary:
+  Total profit/loss: 0.008519
+  Old corpus: 0.976770
+  New corpus: 0.985288
+  Daily return: 0.8721%
+--------------------------------------------------
+
+DATE: 2021-12-20
+Starting corpus: 0.985288
+Number of trades: 1
+
+Trade 17817:
+Author: CD Equisearch
+Expected Return: 11.714845
+Actual Return: 0.016683
+Sign match: True
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: 0.004071
+
+Daily Summary:
+  Total profit/loss: 0.004071
+  Old corpus: 0.985288
+  New corpus: 0.989359
+  Daily return: 0.4132%
+--------------------------------------------------
+
+DATE: 2021-12-24
+Starting corpus: 0.989359
+Number of trades: 1
+
+Trade 11030:
+Author: Edelweiss
+Expected Return: 11.006040
+Actual Return: 0.012018
+Sign match: True
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: 0.002905
+
+Daily Summary:
+  Total profit/loss: 0.002905
+  Old corpus: 0.989359
+  New corpus: 0.992264
+  Daily return: 0.2936%
+--------------------------------------------------
+
+DATE: 2021-12-29
+Starting corpus: 0.992264
+Number of trades: 1
+
+Trade 34957:
+Author: Edelweiss
+Expected Return: 14.727034
+Actual Return: -0.016251
+Sign match: False
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: -0.004163
+
+Daily Summary:
+  Total profit/loss: -0.004163
+  Old corpus: 0.992264
+  New corpus: 0.988101
+  Daily return: -0.4195%
+--------------------------------------------------
+
+DATE: 2021-12-31
+Starting corpus: 0.988101
+Number of trades: 2
+
+Trade 29861:
+Author: Edelweiss
+Expected Return: 11.150526
+Actual Return: 0.004675
+Sign match: True
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: 1.0
+  Trade return: 0.001069
+Trade 36111:
+Author: CD Equisearch
+Expected Return: -19.243038
+Actual Return: -0.006662
+Sign match: True
+Trade calculation:
+  Allocation per trade: 0.250000
+  Signed direction: -1.0
+  Trade return: 0.001566
+
+Daily Summary:
+  Total profit/loss: 0.002634
+  Old corpus: 0.988101
+  New corpus: 0.990735
+  Daily return: 0.2666%
+--------------------------------------------------
+
+COMPARISON OF METRICS
+------------------------------
+Traditional Metrics:
+  Mean Performance: -0.003306
+  Number of Predictions: 10
+  Combined Metric: -0.037060
+
+Corpus Metrics:
+  Initial Corpus: 1.000000
+  Final Corpus: 0.990735
+  Corpus Return: -0.9265%

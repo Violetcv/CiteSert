@@ -20,6 +20,7 @@ Trade 8277:
 Author: Edelweiss
 Expected Return: 10.980119
 Actual Return: -0.007446
+Performance: -0.007446
 Corpus after trade: 0.992554
 
 End of day corpus value: 0.992554
@@ -34,6 +35,7 @@ Trade 4029:
 Author: Edelweiss
 Expected Return: 67.355779
 Actual Return: -0.027464
+Performance: -0.027464
 Corpus after trade: 0.965294
 
 End of day corpus value: 0.965294
@@ -48,12 +50,14 @@ Trade 15092:
 Author: Ventura
 Expected Return: 9.819197
 Actual Return: 0.017421
+Performance: 0.017421
 Corpus after trade: 0.982110
 
 Trade 40157:
 Author: Ventura
 Expected Return: 122.207673
 Actual Return: -0.001496
+Performance: -0.001496
 Corpus after trade: 0.980642
 
 End of day corpus value: 0.980642
@@ -68,6 +72,7 @@ Trade 13119:
 Author: Edelweiss
 Expected Return: 10.952245
 Actual Return: -0.003776
+Performance: -0.003776
 Corpus after trade: 0.976938
 
 End of day corpus value: 0.976938
@@ -82,6 +87,7 @@ Trade 27188:
 Author: Edelweiss
 Expected Return: 65.233726
 Actual Return: -0.052635
+Performance: -0.052635
 Corpus after trade: 0.925517
 
 End of day corpus value: 0.925517
@@ -96,12 +102,13 @@ Trade 3585:
 Author: CD Equisearch
 Expected Return: -13.606911
 Actual Return: -0.034475
-Corpus after trade: 0.893610
+Performance: 0.034475
+Corpus after trade: 0.957424
 
-End of day corpus value: 0.893610
+End of day corpus value: 0.957424
 
 Date: 2021-12-20
-Starting corpus value: 0.893610
+Starting corpus value: 0.957424
 
 Trades for this day:
 ------------------------------
@@ -110,12 +117,13 @@ Trade 17817:
 Author: CD Equisearch
 Expected Return: 11.714845
 Actual Return: 0.016683
-Corpus after trade: 0.908519
+Performance: 0.016683
+Corpus after trade: 0.973397
 
-End of day corpus value: 0.908519
+End of day corpus value: 0.973397
 
 Date: 2021-12-24
-Starting corpus value: 0.908519
+Starting corpus value: 0.973397
 
 Trades for this day:
 ------------------------------
@@ -124,12 +132,13 @@ Trade 11030:
 Author: Edelweiss
 Expected Return: 11.006040
 Actual Return: 0.012018
-Corpus after trade: 0.919437
+Performance: 0.012018
+Corpus after trade: 0.985095
 
-End of day corpus value: 0.919437
+End of day corpus value: 0.985095
 
 Date: 2021-12-29
-Starting corpus value: 0.919437
+Starting corpus value: 0.985095
 
 Trades for this day:
 ------------------------------
@@ -138,12 +147,13 @@ Trade 34957:
 Author: Edelweiss
 Expected Return: 14.727034
 Actual Return: -0.016251
-Corpus after trade: 0.904495
+Performance: -0.016251
+Corpus after trade: 0.969086
 
-End of day corpus value: 0.904495
+End of day corpus value: 0.969086
 
 Date: 2021-12-31
-Starting corpus value: 0.904495
+Starting corpus value: 0.969086
 
 Trades for this day:
 ------------------------------
@@ -152,21 +162,23 @@ Trade 29861:
 Author: Edelweiss
 Expected Return: 11.150526
 Actual Return: 0.004675
-Corpus after trade: 0.908723
+Performance: 0.004675
+Corpus after trade: 0.973616
 
 Trade 36111:
 Author: CD Equisearch
 Expected Return: -19.243038
 Actual Return: -0.006662
-Corpus after trade: 0.902669
+Performance: 0.006662
+Corpus after trade: 0.980102
 
-End of day corpus value: 0.902669
+End of day corpus value: 0.980102
 
 Final Corpus Analysis:
 ==================================================
 Starting corpus: 1.0
-Final corpus: 0.902669
-Total return: -0.097331 (-9.73%)
+Final corpus: 0.980102
+Total return: -0.019898 (-1.99%)
 
 Daily Summary Statistics:
         date  corpus_value  num_trades  daily_return
@@ -175,8 +187,8 @@ Daily Summary Statistics:
 2 2021-12-09      0.980642           2      0.007963
 3 2021-12-10      0.976938           1     -0.003776
 4 2021-12-13      0.925517           1     -0.052635
-5 2021-12-16      0.893610           1     -0.034475
-6 2021-12-20      0.908519           1      0.016683
-7 2021-12-24      0.919437           1      0.012018
-8 2021-12-29      0.904495           1     -0.016251
-9 2021-12-31      0.902669           2     -0.000994
+5 2021-12-16      0.957424           1      0.034475
+6 2021-12-20      0.973397           1      0.016683
+7 2021-12-24      0.985095           1      0.012018
+8 2021-12-29      0.969086           1     -0.016251
+9 2021-12-31      0.980102           2      0.005668
