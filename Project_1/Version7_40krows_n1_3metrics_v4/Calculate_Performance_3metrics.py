@@ -55,7 +55,7 @@ def calculate_monthly_performance(df, best_authors_df, target_month):
         # New allocation logic: Max(0.8*current_corpus/N, 0.25*initial_corpus)
         base_allocation = corpus_fraction * current_corpus / num_predictions
         max_allocation = 0.25 * initial_corpus
-        allocation_per_trade = max(base_allocation, max_allocation)
+        allocation_per_trade = min(base_allocation, max_allocation)
 
         day_data['trade_return'] = (
             np.sign(day_data['expected_return']) * day_data['actual_return'] - 0.0004
@@ -74,7 +74,8 @@ def calculate_monthly_performance(df, best_authors_df, target_month):
         
     daily_df = pd.DataFrame(daily_results)
     monthly_corpus_return = daily_df.iloc[-1]['corpus_value'] 
-    
+    # monthly_corpus_return = (current_corpus - initial_corpus) / initial_corpus
+
     # Combine both metrics in the summary
     performance_summary = pd.DataFrame({
         'author': month_df['author'].unique(),

@@ -1,180 +1,166 @@
 from datetime import timedelta
 import pandas as pd
 import numpy as np
-import sys
+from tqdm import tqdm
+import matplotlib.pyplot as plt
 import os
 from io import StringIO
-import matplotlib.pyplot as plt
-from Calculate_Performance_3metrics import get_best_authors, calculate_monthly_performance
+import sys
 
-def plot_daily_metrics(daily_results_df, month_df, k_percent, target_date, output_dir='debug_outputs'):
-    """Create comprehensive plots for daily metrics."""
-    plt.figure(figsize=(20, 15))
-    
-    # 1. Trading Activity
-    plt.subplot(3, 2, 1)
-    trades_per_day = month_df.groupby('date').size()
-    plt.bar(trades_per_day.index, trades_per_day.values)
-    plt.title(f'Daily Trading Volume (K={k_percent}%)')
-    plt.xlabel('Date')
-    plt.ylabel('Number of Trades')
-    plt.xticks(rotation=45)
-    plt.grid(True)
-
-    # 2. Daily Performance Distribution
-    plt.subplot(3, 2, 2)
-    month_df['performance'] = np.sign(month_df['expected_return']) * month_df['actual_return']
-    plt.hist(month_df['performance'], bins=30)
-    plt.title('Distribution of Trade Performance')
-    plt.xlabel('Performance')
-    plt.ylabel('Frequency')
-    plt.grid(True)
-
-    # 3. Performance by Author
-    plt.subplot(3, 2, 3)
-    author_perf = month_df.groupby('author')['performance'].mean().sort_values()
-    plt.bar(range(len(author_perf)), author_perf)
-    plt.title('Average Performance by Author')
-    plt.xlabel('Author Index')
-    plt.ylabel('Mean Performance')
-    plt.grid(True)
-
-    # 4. Expected vs Actual Returns
-    plt.subplot(3, 2, 4)
-    plt.scatter(month_df['expected_return'], month_df['actual_return'], alpha=0.5)
-    plt.title('Expected vs Actual Returns')
-    plt.xlabel('Expected Return')
-    plt.ylabel('Actual Return')
-    plt.grid(True)
-    
-    # Add correlation coefficient
-    corr = month_df['expected_return'].corr(month_df['actual_return'])
-    plt.text(0.05, 0.95, f'Correlation: {corr:.3f}', 
-             transform=plt.gca().transAxes)
-
-    # 5. Daily Success Rate
-    plt.subplot(3, 2, 5)
-    daily_success = month_df.groupby('date').apply(
-        lambda x: (np.sign(x['expected_return']) == np.sign(x['actual_return'])).mean()
-    )
-    plt.plot(daily_success.index, daily_success.values, marker='o')
-    plt.title('Daily Prediction Success Rate')
-    plt.xlabel('Date')
-    plt.ylabel('Success Rate')
-    plt.xticks(rotation=45)
-    plt.grid(True)
-
-    # 6. Cumulative Performance
-    plt.subplot(3, 2, 6)
-    daily_perf = month_df.groupby('date')['performance'].mean()
-    cumulative_perf = daily_perf.cumsum()
-    plt.plot(cumulative_perf.index, cumulative_perf.values, marker='o')
-    plt.title('Cumulative Performance')
-    plt.xlabel('Date')
-    plt.ylabel('Cumulative Performance')
-    plt.xticks(rotation=45)
-    plt.grid(True)
-
-    plt.tight_layout()
-    plot_file = os.path.join(output_dir, f'metrics_plot_{target_date.strftime("%Y_%m")}_k{k_percent}.png')
-    plt.savefig(plot_file, dpi=300, bbox_inches='tight')
-    plt.close()
-
-def debug_month(df_train, df_test, k_percent, target_date, output_dir='debug_outputs'):
-    """Debug analysis for a specific month and K% and save to file."""
+def debug_december_2021(df_train, df_test, k_percent, output_dir='debug_outputs'):
+    """Detailed debugging function for December 2021 analysis."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    output_file = os.path.join(output_dir, f'corpus_calculation_k{k_percent}.txt')
+    log_file = os.path.join(output_dir, f'detailed_debug_k{k_percent}.txt')
     
-    # Create a string buffer to capture all output
-    output_buffer = StringIO()
-    original_stdout = sys.stdout
-    sys.stdout = output_buffer
-    
-    try:
-        print(f"\nCorpus Calculation Analysis for K = {k_percent}%")
-        print("=" * 50)
+    with open(log_file, 'w') as f:
+        # 1. Initial Setup
+        f.write(f"DETAILED DEBUGGING FOR K={k_percent}%\n")
+        f.write("="*50 + "\n\n")
         
-        # Get month data
-        month_start = target_date.replace(day=1)
-        month_end = (month_start + pd.offsets.MonthEnd(1))
-        
-        # Get best authors
+        target_date = pd.to_datetime('2021-12-01')
         training_end = target_date - timedelta(days=1)
         training_start = training_end - pd.DateOffset(months=14)
-        best_authors = get_best_authors(df_train, training_start, training_end, k_percent)
+        
+        f.write(f"Training Period: {training_start} to {training_end}\n")
+        f.write(f"Test Period: {target_date} to {target_date + pd.offsets.MonthEnd(1)}\n\n")
+        
+        # 2. Author Selection Process
+        f.write("AUTHOR SELECTION PROCESS\n")
+        f.write("-"*30 + "\n")
+        
+        training_data = df_train[
+            (df_train['date'] >= training_start) & 
+            (df_train['date'] <= training_end)
+        ].copy()
+        
+        f.write(f"Training data shape: {training_data.shape}\n")
+        f.write(f"Unique authors in training: {training_data['author'].nunique()}\n\n")
+        
+        # Calculate author performance
+        training_data['performance'] = np.sign(training_data['expected_return']) * training_data['actual_return']
+        author_stats = training_data.groupby('author').agg({
+            'performance': ['sum', 'mean', 'count']
+        }).reset_index()
+        author_stats.columns = ['author', 'total_perf', 'mean_perf', 'num_predictions']
+        
+        # Select top authors
+        n_select = max(1, int(np.ceil(len(author_stats) * k_percent / 100)))
+        best_authors = author_stats.nlargest(n_select, 'total_perf')
+        
+        f.write("TOP SELECTED AUTHORS:\n")
+        f.write(best_authors.to_string() + "\n\n")
+        
+        # 3. December Analysis
+        f.write("DECEMBER TRADING ANALYSIS\n")
+        f.write("-"*30 + "\n")
         
         month_df = df_test[
-            (df_test['date'] >= month_start) & 
-            (df_test['date'] <= month_end) & 
+            (df_test['date'] >= target_date) & 
+            (df_test['date'] <= target_date + pd.offsets.MonthEnd(1)) & 
             (df_test['author'].isin(best_authors['author']))
         ].copy()
         
-        print(f"\nInitial Setup:")
-        print(f"Month: {month_start.strftime('%B %Y')}")
-        print(f"Number of selected authors: {len(best_authors)}")
-        print(f"Total predictions in month: {len(month_df)}")
-        
-        # Corpus calculation details
-        print("\nDaily Corpus Calculation Details:")
-        print("=" * 50)
-        
-        corpus_value = 1.0  # Starting corpus value
-        daily_corpus_values = []
-        
+        # Daily analysis
+        corpus_fraction = 0.8
+        initial_corpus = 1.0
+        corpus_value = initial_corpus
+
         for date, day_data in month_df.groupby('date'):
-            print(f"\nDate: {date.strftime('%Y-%m-%d')}")
-            print(f"Starting corpus value: {corpus_value:.6f}")
-            
-            print("\nTrades for this day:")
-            print("-" * 30)
+            f.write(f"\nDATE: {date.strftime('%Y-%m-%d')}\n")
+            f.write(f"Starting corpus: {corpus_value:.6f}\n")
+            num_predictions = len(day_data)
+            f.write(f"Number of trades: {num_predictions}\n\n")
+
+            # Calculate allocation for this day
+            base_allocation = (corpus_fraction * corpus_value) / num_predictions
+            max_allocation = 0.25 * initial_corpus
+            allocation_per_trade = min(base_allocation, max_allocation)
+        
+            daily_profit_loss = 0
             
             for idx, trade in day_data.iterrows():
-                print(f"\nTrade {idx}:")
-                print(f"Author: {trade['author']}")
-                print(f"Expected Return: {trade['expected_return']:.6f}")
-                print(f"Actual Return: {trade['actual_return']:.6f}")
+                f.write(f"Trade {idx}:\n")
+                f.write(f"Author: {trade['author']}\n")
+                f.write(f"Expected Return: {trade['expected_return']:.6f}\n")
+                f.write(f"Actual Return: {trade['actual_return']:.6f}\n")
+                f.write(f"Sign match: {np.sign(trade['expected_return']) == np.sign(trade['actual_return'])}\n")
                 
-                # Update corpus
-                trade_impact = trade['actual_return']
-                corpus_value *= (1 + trade_impact)
-                print(f"Corpus after trade: {corpus_value:.6f}")
-            
-            daily_corpus_values.append({
-                'date': date,
-                'corpus_value': corpus_value,
-                'num_trades': len(day_data),
-                'daily_return': day_data['actual_return'].mean()
-            })
-            
-            print(f"\nEnd of day corpus value: {corpus_value:.6f}")
-        
-        print("\nFinal Corpus Analysis:")
-        print("=" * 50)
-        print(f"Starting corpus: 1.0")
-        print(f"Final corpus: {corpus_value:.6f}")
-        print(f"Total return: {(corpus_value - 1.0):.6f} ({(corpus_value - 1.0)*100:.2f}%)")
-        
-        # Convert to DataFrame for additional analysis
-        daily_summary = pd.DataFrame(daily_corpus_values)
-        
-        print("\nDaily Summary Statistics:")
-        print(daily_summary.to_string())
-        
-    finally:
-        # Restore stdout and save output
-        sys.stdout = original_stdout
-        
-        with open(output_file, 'w') as f:
-            f.write(output_buffer.getvalue())
-        
-        print(f"Corpus calculation details saved to {output_file}")
-    
-    return daily_summary
+                # Calculate trade return
+                signed_direction = np.sign(trade['expected_return'])
+                trade_return = (signed_direction * trade['actual_return'] - 0.0004) * allocation_per_trade
 
+                f.write(f"Trade calculation:\n")
+                f.write(f"  Allocation per trade: {allocation_per_trade:.6f}\n")
+                f.write(f"  Signed direction: {signed_direction}\n")
+                f.write(f"  Trade return: {trade_return:.6f}\n")
+                
+                daily_profit_loss += trade_return
+            
+            # Update corpus with daily profit/loss
+            old_corpus = corpus_value
+            corpus_value += daily_profit_loss
+            
+            f.write(f"\nDaily Summary:\n")
+            f.write(f"  Total profit/loss: {daily_profit_loss:.6f}\n")
+            f.write(f"  Old corpus: {old_corpus:.6f}\n")
+            f.write(f"  New corpus: {corpus_value:.6f}\n")
+            f.write(f"  Daily return: {(daily_profit_loss/old_corpus)*100:.4f}%\n")
+            f.write("-"*50 + "\n")
+
+        # Calculate metrics for comparison
+        month_df['performance'] = np.sign(month_df['expected_return']) * month_df['actual_return']
+        mean_performance = month_df['performance'].mean()
+        num_predictions = len(month_df)
+        combined_metric = (mean_performance - 0.0004) * num_predictions
+        corpus_return = (corpus_value - initial_corpus) / initial_corpus
+        
+        f.write("\nCOMPARISON OF METRICS\n")
+        f.write("-"*30 + "\n")
+        f.write(f"Traditional Metrics:\n")
+        f.write(f"  Mean Performance: {mean_performance:.6f}\n")
+        f.write(f"  Number of Predictions: {num_predictions}\n")
+        f.write(f"  Combined Metric: {combined_metric:.6f}\n\n")
+        f.write(f"Corpus Metrics:\n")
+        f.write(f"  Initial Corpus: {initial_corpus:.6f}\n")
+        f.write(f"  Final Corpus: {corpus_value:.6f}\n")
+        f.write(f"  Corpus Return: {corpus_return*100:.4f}%\n")
+
+        return {
+            'k_percent': k_percent,
+            'mean_performance': mean_performance,
+            'num_predictions': num_predictions,
+            'combined_metric': combined_metric,
+            'corpus_return': corpus_return
+        }
+
+def plot_comparison(results_df):
+    """Plot comparison of metrics for different k values."""
+    plt.figure(figsize=(15, 10))
+    
+    # Plot Combined Metric
+    plt.subplot(2, 1, 1)
+    plt.bar(results_df['k_percent'].astype(str), results_df['combined_metric'])
+    plt.title('Combined Metric by K%')
+    plt.xlabel('K Percent')
+    plt.ylabel('Combined Metric')
+    plt.grid(True)
+    
+    # Plot Number of Predictions
+    plt.subplot(2, 1, 2)
+    plt.bar(results_df['k_percent'].astype(str), results_df['num_predictions'])
+    plt.title('Number of Monthly Predictions by K%')
+    plt.xlabel('K Percent')
+    plt.ylabel('Number of Predictions')
+    plt.grid(True)
+    
+    plt.tight_layout()
+    plt.savefig('december_2021_comparison.png')
+    plt.close()
+
+# Main execution
 if __name__ == "__main__":
-    # Load your data
     file_path_d5 = r'C:\Users\disch\Desktop\CiteSert\Project_1\Version6_40krows_3metrics\input_data\filtered_data_2.csv'
     file_path_d1 = r'C:\Users\disch\Desktop\CiteSert\Project_1\Version6_40krows_3metrics\input_data\filtered_data_2_n1.csv'
     
@@ -185,18 +171,22 @@ if __name__ == "__main__":
     df_d1['date'] = pd.to_datetime(df_d1['date'])
     df_d5['date'] = pd.to_datetime(df_d5['date'])
     
-    print(f"Data range: {df_d1['date'].min()} to {df_d1['date'].max()}")
-    print(f"Total records: {len(df_d1)}")
+    print("Starting debug analysis for December 2021...")
     
-    # Debug specific months
-    months_to_debug = [
-        pd.to_datetime('2021-12-01')
-    ]
+    # Debug specific k values
+    k_values = [15.0, 25.0]
+    results = []
     
-    k_values = [25.0]
+    for k in k_values:
+        print(f"\nAnalyzing k={k}%...")
+        debug_results = debug_december_2021(df_d1, df_d1, k)
+        results.append(debug_results)
+        print(f"Debug output saved to debug_outputs/detailed_debug_k{k}.txt")
     
-    for target_date in months_to_debug:
-        print(f"\nDebugging month: {target_date.strftime('%Y-%m')}")
-        for k in k_values:
-            print(f"Processing k={k}%...")
-            monthly_perf = debug_month(df_d1, df_d1, k, target_date)
+    # Create comparison DataFrame and plot
+    results_df = pd.DataFrame(results)
+    print("\nComparison of metrics across k values:")
+    print(results_df.to_string(float_format=lambda x: '{:.6f}'.format(x)))
+    
+    plot_comparison(results_df)
+    print("\nComparison plots saved as 'december_2021_comparison.png'")
