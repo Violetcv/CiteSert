@@ -1,0 +1,161 @@
+
+Corpus Calculation Analysis for K = 15.0%
+==================================================
+
+Initial Setup:
+Month: December 2021
+Number of selected authors: 6
+Total predictions in month: 10
+
+Daily Corpus Calculation Details:
+==================================================
+
+Date: 2021-12-03
+Starting corpus value: 1.000000
+
+Trades for this day:
+------------------------------
+
+Trade 8277:
+Author: Edelweiss
+Expected Return: 10.980119
+Actual Return: -0.007446
+Corpus after trade: 0.992554
+
+End of day corpus value: 0.992554
+
+Date: 2021-12-08
+Starting corpus value: 0.992554
+
+Trades for this day:
+------------------------------
+
+Trade 4029:
+Author: Edelweiss
+Expected Return: 67.355779
+Actual Return: -0.027464
+Corpus after trade: 0.965294
+
+End of day corpus value: 0.965294
+
+Date: 2021-12-10
+Starting corpus value: 0.965294
+
+Trades for this day:
+------------------------------
+
+Trade 13119:
+Author: Edelweiss
+Expected Return: 10.952245
+Actual Return: -0.003776
+Corpus after trade: 0.961649
+
+End of day corpus value: 0.961649
+
+Date: 2021-12-13
+Starting corpus value: 0.961649
+
+Trades for this day:
+------------------------------
+
+Trade 27188:
+Author: Edelweiss
+Expected Return: 65.233726
+Actual Return: -0.052635
+Corpus after trade: 0.911033
+
+End of day corpus value: 0.911033
+
+Date: 2021-12-16
+Starting corpus value: 0.911033
+
+Trades for this day:
+------------------------------
+
+Trade 3585:
+Author: CD Equisearch
+Expected Return: -13.606911
+Actual Return: -0.034475
+Corpus after trade: 0.879625
+
+End of day corpus value: 0.879625
+
+Date: 2021-12-20
+Starting corpus value: 0.879625
+
+Trades for this day:
+------------------------------
+
+Trade 17817:
+Author: CD Equisearch
+Expected Return: 11.714845
+Actual Return: 0.016683
+Corpus after trade: 0.894300
+
+End of day corpus value: 0.894300
+
+Date: 2021-12-24
+Starting corpus value: 0.894300
+
+Trades for this day:
+------------------------------
+
+Trade 11030:
+Author: Edelweiss
+Expected Return: 11.006040
+Actual Return: 0.012018
+Corpus after trade: 0.905048
+
+End of day corpus value: 0.905048
+
+Date: 2021-12-29
+Starting corpus value: 0.905048
+
+Trades for this day:
+------------------------------
+
+Trade 34957:
+Author: Edelweiss
+Expected Return: 14.727034
+Actual Return: -0.016251
+Corpus after trade: 0.890340
+
+End of day corpus value: 0.890340
+
+Date: 2021-12-31
+Starting corpus value: 0.890340
+
+Trades for this day:
+------------------------------
+
+Trade 29861:
+Author: Edelweiss
+Expected Return: 11.150526
+Actual Return: 0.004675
+Corpus after trade: 0.894502
+
+Trade 36111:
+Author: CD Equisearch
+Expected Return: -19.243038
+Actual Return: -0.006662
+Corpus after trade: 0.888542
+
+End of day corpus value: 0.888542
+
+Final Corpus Analysis:
+==================================================
+Starting corpus: 1.0
+Final corpus: 0.888542
+Total return: -0.111458 (-11.15%)
+
+Daily Summary Statistics:
+        date  corpus_value  num_trades  daily_return
+0 2021-12-03      0.992554           1     -0.007446
+1 2021-12-08      0.965294           1     -0.027464
+2 2021-12-10      0.961649           1     -0.003776
+3 2021-12-13      0.911033           1     -0.052635
+4 2021-12-16      0.879625           1     -0.034475
+5 2021-12-20      0.894300           1      0.016683
+6 2021-12-24      0.905048           1      0.012018
+7 2021-12-29      0.890340           1     -0.016251
+8 2021-12-31      0.888542           2     -0.000994

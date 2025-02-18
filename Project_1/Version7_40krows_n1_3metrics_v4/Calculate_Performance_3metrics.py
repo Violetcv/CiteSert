@@ -47,44 +47,32 @@ def calculate_monthly_performance(df, best_authors_df, target_month):
     initial_corpus = 1.0
     current_corpus = initial_corpus
 
-    # Add position sizing limits
-    max_position_size = 0.1  # Maximum 10% of corpus per trade
-    
     # Process day by day
     daily_results = []
     for date, day_data in month_df.groupby('date'):
         num_predictions = len(day_data)
 
-        # Calculate base position size
-        base_position_size = corpus_fraction * current_corpus / num_predictions
-        
-        # Cap position size
-        position_size = min(base_position_size, current_corpus * max_position_size)
+        # New allocation logic: Max(0.8*current_corpus/N, 0.25*initial_corpus)
+        base_allocation = corpus_fraction * current_corpus / num_predictions
+        max_allocation = 0.25 * initial_corpus
+        allocation_per_trade = max(base_allocation, max_allocation)
 
         day_data['trade_return'] = (
             np.sign(day_data['expected_return']) * day_data['actual_return'] - 0.0004
-        ) * position_size
-
-        # Apply transaction costs after position sizing
-        day_data['trade_return'] = day_data['trade_return'] - (position_size * 0.0004)
+        ) * allocation_per_trade
 
         daily_profit_loss = day_data['trade_return'].sum()
-
-        # Update corpus with stop-loss protection
-        max_daily_loss = -0.05 * current_corpus  # 5% maximum daily loss
-        daily_profit_loss = max(daily_profit_loss, max_daily_loss)
-
         current_corpus += daily_profit_loss
+
         daily_results.append({
                     'date': date, 
-                    'corpus_value': current_corpus,
+                    'corpus_value': current_corpus, 
                     'num_trades': num_predictions,
-                    'position_size': position_size,
+                    'allocation_per_trade': allocation_per_trade,
                     'daily_return': daily_profit_loss/current_corpus
                 })    
         
     daily_df = pd.DataFrame(daily_results)
-    # monthly_corpus_return = (daily_df.iloc[-1]['corpus_value'] - initial_corpus) / initial_corpus   
     monthly_corpus_return = daily_df.iloc[-1]['corpus_value'] 
     
     # Combine both metrics in the summary
