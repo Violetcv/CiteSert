@@ -765,7 +765,7 @@ def plot_performance_metrics(results_df):
     print("\nPlots have been saved in the 'performance_plots' directory.")
     
 # Call the function
-plot_performance_metrics(results_df)
+# plot_performance_metrics(results_df)
 
 def plot_all_metrics(results_df):
     """
