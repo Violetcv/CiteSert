@@ -1,0 +1,83 @@
+
+Analyzing K = 5.0%
+Training period: 2020-09-30 00:00:00 to 2021-11-30 00:00:00
+Test month: 2021-12-01 00:00:00
+
+Best Authors Selected:
+             author  total_performance  number_of_rows
+11        Edelweiss           0.399642             191
+2   Arihant Capital           0.192589              19
+
+Month Data Summary:
+Total predictions: 7
+Unique authors: 1
+Trading days: 7
+
+Daily Trading Statistics:
+
+Date: 2021-12-03 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 10.980119
+- Mean actual return: -0.007446
+- Prediction success rate: 0.00%
+
+Date: 2021-12-08 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 67.355779
+- Mean actual return: -0.027464
+- Prediction success rate: 0.00%
+
+Date: 2021-12-10 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 10.952245
+- Mean actual return: -0.003776
+- Prediction success rate: 0.00%
+
+Date: 2021-12-13 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 65.233726
+- Mean actual return: -0.052635
+- Prediction success rate: 0.00%
+
+Date: 2021-12-24 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 11.006040
+- Mean actual return: 0.012018
+- Prediction success rate: 100.00%
+
+Date: 2021-12-29 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 14.727034
+- Mean actual return: -0.016251
+- Prediction success rate: 0.00%
+
+Date: 2021-12-31 00:00:00
+Number of trades: 1
+Unique authors: 1
+Performance metrics:
+- Mean expected return: 11.150526
+- Mean actual return: 0.004675
+- Prediction success rate: 100.00%
+
+Calculating Monthly Performance:
+
+Monthly Performance Summary:
+      author  mean_performance  count      month  corpus_return
+0  Edelweiss         -0.012983      7 2021-12-01       0.990378
+
+Aggregate Statistics:
+Mean performance: -0.012983
+Total predictions: 7
+Corpus return: 0.990378

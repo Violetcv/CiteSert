@@ -1,0 +1,252 @@
+=== December 2021 Analysis (Top 100.0% Authors) ===
+
+
+Date: 2021-12-01
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: -0.008361
+Selected Authors Mean Performance: -0.008361
+Performance Difference: 0.000000
+Daily Return: -0.007009
+Corpus Value: 0.992991
+
+Date: 2021-12-02
+--------------------------------------------------
+Number of Selected Authors Trading: 3
+All Authors Mean Performance: -0.009194
+Selected Authors Mean Performance: -0.009194
+Performance Difference: 0.000000
+Daily Return: -0.007622
+Corpus Value: 0.985370
+
+Date: 2021-12-03
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: -0.009327
+Selected Authors Mean Performance: -0.009327
+Performance Difference: 0.000000
+Daily Return: -0.007668
+Corpus Value: 0.977702
+
+Date: 2021-12-04
+--------------------------------------------------
+Number of Selected Authors Trading: 2
+All Authors Mean Performance: 0.008741
+Selected Authors Mean Performance: 0.008741
+Performance Difference: 0.000000
+Daily Return: 0.006524
+Corpus Value: 0.984226
+
+Date: 2021-12-05
+--------------------------------------------------
+Number of Selected Authors Trading: 1
+All Authors Mean Performance: 0.024616
+Selected Authors Mean Performance: 0.024616
+Performance Difference: 0.000000
+Daily Return: 0.019068
+Corpus Value: 1.003293
+
+Date: 2021-12-06
+--------------------------------------------------
+Number of Selected Authors Trading: 7
+All Authors Mean Performance: 0.024202
+Selected Authors Mean Performance: 0.024202
+Performance Difference: 0.000000
+Daily Return: 0.019104
+Corpus Value: 1.022397
+
+Date: 2021-12-07
+--------------------------------------------------
+Number of Selected Authors Trading: 4
+All Authors Mean Performance: -0.004346
+Selected Authors Mean Performance: -0.004346
+Performance Difference: 0.000000
+Daily Return: -0.003882
+Corpus Value: 1.018515
+
+Date: 2021-12-08
+--------------------------------------------------
+Number of Selected Authors Trading: 3
+All Authors Mean Performance: -0.017745
+Selected Authors Mean Performance: -0.017745
+Performance Difference: 0.000000
+Daily Return: -0.014785
+Corpus Value: 1.003730
+
+Date: 2021-12-09
+--------------------------------------------------
+Number of Selected Authors Trading: 9
+All Authors Mean Performance: 0.020598
+Selected Authors Mean Performance: 0.020598
+Performance Difference: 0.000000
+Daily Return: 0.016219
+Corpus Value: 1.019949
+
+Date: 2021-12-10
+--------------------------------------------------
+Number of Selected Authors Trading: 2
+All Authors Mean Performance: 0.006110
+Selected Authors Mean Performance: 0.006110
+Performance Difference: 0.000000
+Daily Return: 0.004659
+Corpus Value: 1.024608
+
+Date: 2021-12-12
+--------------------------------------------------
+Number of Selected Authors Trading: 1
+All Authors Mean Performance: -0.019293
+Selected Authors Mean Performance: -0.019293
+Performance Difference: 0.000000
+Daily Return: -0.016142
+Corpus Value: 1.008466
+
+Date: 2021-12-13
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: -0.006580
+Selected Authors Mean Performance: -0.006580
+Performance Difference: 0.000000
+Daily Return: -0.005631
+Corpus Value: 1.002834
+
+Date: 2021-12-14
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: -0.024358
+Selected Authors Mean Performance: -0.024358
+Performance Difference: 0.000000
+Daily Return: -0.019862
+Corpus Value: 0.982972
+
+Date: 2021-12-15
+--------------------------------------------------
+Number of Selected Authors Trading: 1
+All Authors Mean Performance: -0.035180
+Selected Authors Mean Performance: -0.035180
+Performance Difference: 0.000000
+Daily Return: -0.027980
+Corpus Value: 0.954992
+
+Date: 2021-12-16
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: -0.003446
+Selected Authors Mean Performance: -0.003446
+Performance Difference: 0.000000
+Daily Return: -0.002938
+Corpus Value: 0.952054
+
+Date: 2021-12-17
+--------------------------------------------------
+Number of Selected Authors Trading: 1
+All Authors Mean Performance: 0.014234
+Selected Authors Mean Performance: 0.014234
+Performance Difference: 0.000000
+Daily Return: 0.010537
+Corpus Value: 0.962591
+
+Date: 2021-12-19
+--------------------------------------------------
+Number of Selected Authors Trading: 1
+All Authors Mean Performance: -0.002048
+Selected Authors Mean Performance: -0.002048
+Performance Difference: 0.000000
+Daily Return: -0.001885
+Corpus Value: 0.960706
+
+Date: 2021-12-20
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: 0.019250
+Selected Authors Mean Performance: 0.019250
+Performance Difference: 0.000000
+Daily Return: 0.014488
+Corpus Value: 0.975193
+
+Date: 2021-12-21
+--------------------------------------------------
+Number of Selected Authors Trading: 1
+All Authors Mean Performance: 0.003941
+Selected Authors Mean Performance: 0.003941
+Performance Difference: 0.000000
+Daily Return: 0.002762
+Corpus Value: 0.977956
+
+Date: 2021-12-22
+--------------------------------------------------
+Number of Selected Authors Trading: 7
+All Authors Mean Performance: -0.020515
+Selected Authors Mean Performance: -0.020515
+Performance Difference: 0.000000
+Daily Return: -0.016363
+Corpus Value: 0.961592
+
+Date: 2021-12-23
+--------------------------------------------------
+Number of Selected Authors Trading: 3
+All Authors Mean Performance: -0.026138
+Selected Authors Mean Performance: -0.026138
+Performance Difference: 0.000000
+Daily Return: -0.020415
+Corpus Value: 0.941177
+
+Date: 2021-12-24
+--------------------------------------------------
+Number of Selected Authors Trading: 2
+All Authors Mean Performance: -0.012591
+Selected Authors Mean Performance: -0.012591
+Performance Difference: 0.000000
+Daily Return: -0.009781
+Corpus Value: 0.931396
+
+Date: 2021-12-27
+--------------------------------------------------
+Number of Selected Authors Trading: 3
+All Authors Mean Performance: 0.007472
+Selected Authors Mean Performance: 0.007472
+Performance Difference: 0.000000
+Daily Return: 0.005269
+Corpus Value: 0.936665
+
+Date: 2021-12-28
+--------------------------------------------------
+Number of Selected Authors Trading: 4
+All Authors Mean Performance: 0.027102
+Selected Authors Mean Performance: 0.027102
+Performance Difference: 0.000000
+Daily Return: 0.020009
+Corpus Value: 0.956674
+
+Date: 2021-12-29
+--------------------------------------------------
+Number of Selected Authors Trading: 5
+All Authors Mean Performance: -0.001554
+Selected Authors Mean Performance: -0.001554
+Performance Difference: 0.000000
+Daily Return: -0.001495
+Corpus Value: 0.955179
+
+Date: 2021-12-30
+--------------------------------------------------
+Number of Selected Authors Trading: 2
+All Authors Mean Performance: 0.041021
+Selected Authors Mean Performance: 0.041021
+Performance Difference: 0.000000
+Daily Return: 0.031040
+Corpus Value: 0.986219
+
+Date: 2021-12-31
+--------------------------------------------------
+Number of Selected Authors Trading: 3
+All Authors Mean Performance: 0.000390
+Selected Authors Mean Performance: 0.000390
+Performance Difference: 0.000000
+Daily Return: -0.000008
+Corpus Value: 0.986211
+
+
+=== Monthly Summary ===
+Final Corpus Value: 0.986211
+Average Daily Return: -0.000511
+Mean of Mean Performance: -0.000111
+Average Performance Difference: 0.000000
