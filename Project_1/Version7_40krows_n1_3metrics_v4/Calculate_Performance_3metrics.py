@@ -13,16 +13,14 @@ def get_best_authors(df, start_date, end_date, k_percent):
     
     # Calculate performance and aggregate by author
     period_df['performance'] = np.sign(period_df['expected_return']) * period_df['actual_return']
-    author_performance = (period_df.groupby('author')
-                         .agg(
-                             total_performance=('performance', 'sum'),
-                             number_of_rows=('performance', 'count')
-                         )
-                         .reset_index())
+    author_performance = period_df.groupby('author').agg({
+                    'performance': ['sum', 'mean', 'count']
+                }).reset_index()
+    author_performance.columns = ['author', 'total_perf', 'mean_perf', 'num_predictions']
     
     # Select top K% authors
     n_select = max(1, int(np.ceil(len(author_performance) * k_percent / 100)))
-    return author_performance.nlargest(n_select, 'total_performance')
+    return author_performance.nlargest(n_select, 'total_perf')
 
 def calculate_monthly_performance(df, best_authors_df, target_month):
     """Calculate performance metrics for a specific month."""
@@ -45,44 +43,42 @@ def calculate_monthly_performance(df, best_authors_df, target_month):
     # Corpus return calculation
     corpus_fraction = 0.8
     initial_corpus = 1.0
-    current_corpus = initial_corpus
+    corpus_value = initial_corpus
 
     # Process day by day
     daily_results = []
     for date, day_data in month_df.groupby('date'):
         num_predictions = len(day_data)
-
-        # New allocation logic: Max(0.8*current_corpus/N, 0.25*initial_corpus)
-        base_allocation = corpus_fraction * current_corpus / num_predictions
+        base_allocation = corpus_fraction * corpus_value / num_predictions
         max_allocation = 0.25 * initial_corpus
         allocation_per_trade = min(base_allocation, max_allocation)
 
-        day_data['trade_return'] = (
-            np.sign(day_data['expected_return']) * day_data['actual_return'] - 0.0004
-        ) * allocation_per_trade
-
-        daily_profit_loss = day_data['trade_return'].sum()
-        current_corpus += daily_profit_loss
+        daily_profit_loss = 0            
+        for _, trade in day_data.iterrows():
+            signed_direction = np.sign(trade['expected_return'])
+            trade_return = (signed_direction * trade['actual_return'] - 0.0004) * allocation_per_trade
+            daily_profit_loss += trade_return
+                    
+        corpus_value += daily_profit_loss
 
         daily_results.append({
                     'date': date, 
-                    'corpus_value': current_corpus, 
+                    'corpus_value': corpus_value, 
                     'num_trades': num_predictions,
                     'allocation_per_trade': allocation_per_trade,
-                    'daily_return': daily_profit_loss/current_corpus
+                    'daily_return': daily_profit_loss/corpus_value if corpus_value != 0 else 0
                 })    
         
     daily_df = pd.DataFrame(daily_results)
-    monthly_corpus_return = daily_df.iloc[-1]['corpus_value'] 
-    # monthly_corpus_return = (current_corpus - initial_corpus) / initial_corpus
-
+    corpus_return = (corpus_value - initial_corpus) / initial_corpus
+    
     # Combine both metrics in the summary
     performance_summary = pd.DataFrame({
         'author': month_df['author'].unique(),
         'mean_performance': month_df.groupby('author')['performance'].mean().values,  # Add .values
         'count': month_df.groupby('author')['performance'].count().values,  # Add .values
         'month': [month_start] * len(month_df['author'].unique()),
-        'corpus_return': [monthly_corpus_return] * len(month_df['author'].unique())
+        'corpus_return': [corpus_return] * len(month_df['author'].unique())
     })
     
     return performance_summary
@@ -167,7 +163,7 @@ def main(df_train, df_test):
                                         metrics['number_of_monthly_predictions']
             
             # New corpus return metric
-            metrics['mean_monthly_corpus_return'] = results_df['corpus_return'].mean()
+            metrics['mean_monthly_corpus_return'] = (results_df['corpus_return'].sum()/num_months) * 100
             metrics['k_percent'] = k
             iteration_results.append(metrics)
     

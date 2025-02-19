@@ -1,0 +1,675 @@
+DETAILED DEBUGGING FOR K=2.5% - YEARS 2018-2022
+==================================================
+
+
+ANALYSIS FOR YEAR 2018
+==================================================
+
+ANALYSIS FOR January 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 10
+  Mean Performance: -0.002475
+  Combined Metric: -0.172526
+  Corpus Return: -3.0317%
+  Final Corpus Value: 0.969683
+------------------------------
+
+ANALYSIS FOR February 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.001921
+  Combined Metric: -0.139269
+  Corpus Return: -1.8812%
+  Final Corpus Value: 0.981188
+------------------------------
+
+ANALYSIS FOR March 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.006493
+  Combined Metric: -0.413585
+  Corpus Return: -1.0340%
+  Final Corpus Value: 0.989660
+------------------------------
+
+ANALYSIS FOR April 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.007671
+  Combined Metric: 0.436243
+  Corpus Return: 4.4582%
+  Final Corpus Value: 1.044582
+------------------------------
+
+ANALYSIS FOR May 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 7
+  Mean Performance: -0.002311
+  Combined Metric: -0.162640
+  Corpus Return: -4.9480%
+  Final Corpus Value: 0.950520
+------------------------------
+
+ANALYSIS FOR June 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.007002
+  Combined Metric: -0.444130
+  Corpus Return: -0.9253%
+  Final Corpus Value: 0.990747
+------------------------------
+
+ANALYSIS FOR July 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.000412
+  Combined Metric: -0.048740
+  Corpus Return: -0.0203%
+  Final Corpus Value: 0.999797
+------------------------------
+
+ANALYSIS FOR August 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: 0.002284
+  Combined Metric: 0.113041
+  Corpus Return: 1.8989%
+  Final Corpus Value: 1.018989
+------------------------------
+
+ANALYSIS FOR September 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.000125
+  Combined Metric: -0.016517
+  Corpus Return: -0.0138%
+  Final Corpus Value: 0.999862
+------------------------------
+
+ANALYSIS FOR October 2018
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.015794
+  Combined Metric: -0.971615
+  Corpus Return: -1.6194%
+  Final Corpus Value: 0.983806
+------------------------------
+
+ANALYSIS FOR November 2018
+------------------------------
+No predictions for November 2018
+
+ANALYSIS FOR December 2018
+------------------------------
+No predictions for December 2018
+
+YEAR 2018 SUMMARY
+==============================
+Average Monthly Predictions: 2.60
+Average Mean Performance: -0.002633
+Average Combined Metric: -0.181974
+Average Monthly Corpus Return: -0.7116%
+==============================
+
+
+ANALYSIS FOR YEAR 2019
+==================================================
+
+ANALYSIS FOR January 2019
+------------------------------
+No predictions for January 2019
+
+ANALYSIS FOR February 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: 0.010245
+  Combined Metric: 0.590676
+  Corpus Return: 0.7383%
+  Final Corpus Value: 1.007383
+------------------------------
+
+ANALYSIS FOR March 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.000670
+  Combined Metric: -0.064215
+  Corpus Return: -0.0535%
+  Final Corpus Value: 0.999465
+------------------------------
+
+ANALYSIS FOR April 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.019810
+  Combined Metric: -1.212626
+  Corpus Return: -0.5053%
+  Final Corpus Value: 0.994947
+------------------------------
+
+ANALYSIS FOR May 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 3
+  Mean Performance: 0.026821
+  Combined Metric: 1.585285
+  Corpus Return: 5.9145%
+  Final Corpus Value: 1.059145
+------------------------------
+
+ANALYSIS FOR June 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.021378
+  Combined Metric: 1.258682
+  Corpus Return: 2.0978%
+  Final Corpus Value: 1.020978
+------------------------------
+
+ANALYSIS FOR July 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.007030
+  Combined Metric: -0.445776
+  Corpus Return: -0.3715%
+  Final Corpus Value: 0.996285
+------------------------------
+
+ANALYSIS FOR August 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.026957
+  Combined Metric: -1.641448
+  Corpus Return: -2.0518%
+  Final Corpus Value: 0.979482
+------------------------------
+
+ANALYSIS FOR September 2019
+------------------------------
+No predictions for September 2019
+
+ANALYSIS FOR October 2019
+------------------------------
+No predictions for October 2019
+
+ANALYSIS FOR November 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.001168
+  Combined Metric: -0.094058
+  Corpus Return: -0.2351%
+  Final Corpus Value: 0.997649
+------------------------------
+
+ANALYSIS FOR December 2019
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.003395
+  Combined Metric: -0.227696
+  Corpus Return: -0.1897%
+  Final Corpus Value: 0.998103
+------------------------------
+
+YEAR 2019 SUMMARY
+==============================
+Average Monthly Predictions: 1.33
+Average Mean Performance: -0.000065
+Average Combined Metric: -0.027908
+Average Monthly Corpus Return: 0.5937%
+==============================
+
+
+ANALYSIS FOR YEAR 2020
+==================================================
+
+ANALYSIS FOR January 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 3
+  Mean Performance: -0.002301
+  Combined Metric: -0.162072
+  Corpus Return: -1.7729%
+  Final Corpus Value: 0.982271
+------------------------------
+
+ANALYSIS FOR February 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 4
+  Mean Performance: -0.001134
+  Combined Metric: -0.092054
+  Corpus Return: -0.5898%
+  Final Corpus Value: 0.994102
+------------------------------
+
+ANALYSIS FOR March 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.019588
+  Combined Metric: 1.151306
+  Corpus Return: 0.9594%
+  Final Corpus Value: 1.009594
+------------------------------
+
+ANALYSIS FOR April 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.002600
+  Combined Metric: 0.131974
+  Corpus Return: 0.0550%
+  Final Corpus Value: 1.000550
+------------------------------
+
+ANALYSIS FOR May 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: -0.004063
+  Combined Metric: -0.267803
+  Corpus Return: -5.2327%
+  Final Corpus Value: 0.947673
+------------------------------
+
+ANALYSIS FOR June 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.000862
+  Combined Metric: -0.075740
+  Corpus Return: -0.0947%
+  Final Corpus Value: 0.999053
+------------------------------
+
+ANALYSIS FOR July 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.005101
+  Combined Metric: -0.330078
+  Corpus Return: -5.0457%
+  Final Corpus Value: 0.949543
+------------------------------
+
+ANALYSIS FOR August 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: -0.024988
+  Combined Metric: -1.523260
+  Corpus Return: -8.8857%
+  Final Corpus Value: 0.911143
+------------------------------
+
+ANALYSIS FOR September 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.058418
+  Combined Metric: 3.481051
+  Corpus Return: 2.9009%
+  Final Corpus Value: 1.029009
+------------------------------
+
+ANALYSIS FOR October 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: 0.004115
+  Combined Metric: 0.222905
+  Corpus Return: 0.2786%
+  Final Corpus Value: 1.002786
+------------------------------
+
+ANALYSIS FOR November 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: -0.005379
+  Combined Metric: -0.346759
+  Corpus Return: -0.8669%
+  Final Corpus Value: 0.991331
+------------------------------
+
+ANALYSIS FOR December 2020
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.033553
+  Combined Metric: 1.989177
+  Corpus Return: 0.8288%
+  Final Corpus Value: 1.008288
+------------------------------
+
+YEAR 2020 SUMMARY
+==============================
+Average Monthly Predictions: 1.75
+Average Mean Performance: 0.006204
+Average Combined Metric: 0.348221
+Average Monthly Corpus Return: -1.4555%
+==============================
+
+
+ANALYSIS FOR YEAR 2021
+==================================================
+
+ANALYSIS FOR January 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.014446
+  Combined Metric: -0.890784
+  Corpus Return: -1.1135%
+  Final Corpus Value: 0.988865
+------------------------------
+
+ANALYSIS FOR February 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.005950
+  Combined Metric: -0.381025
+  Corpus Return: -0.9526%
+  Final Corpus Value: 0.990474
+------------------------------
+
+ANALYSIS FOR March 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 3
+  Mean Performance: 0.015519
+  Combined Metric: 0.907148
+  Corpus Return: 1.1339%
+  Final Corpus Value: 1.011339
+------------------------------
+
+ANALYSIS FOR April 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.000096
+  Combined Metric: -0.018247
+  Corpus Return: -0.0228%
+  Final Corpus Value: 0.999772
+------------------------------
+
+ANALYSIS FOR May 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.002638
+  Combined Metric: -0.182294
+  Corpus Return: -0.3798%
+  Final Corpus Value: 0.996202
+------------------------------
+
+ANALYSIS FOR June 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.021999
+  Combined Metric: 1.295940
+  Corpus Return: 1.0800%
+  Final Corpus Value: 1.010800
+------------------------------
+
+ANALYSIS FOR July 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.006795
+  Combined Metric: -0.431703
+  Corpus Return: -0.5396%
+  Final Corpus Value: 0.994604
+------------------------------
+
+ANALYSIS FOR August 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.007012
+  Combined Metric: 0.396714
+  Corpus Return: 1.4877%
+  Final Corpus Value: 1.014877
+------------------------------
+
+ANALYSIS FOR September 2021
+------------------------------
+No predictions for September 2021
+
+ANALYSIS FOR October 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: 0.009785
+  Combined Metric: 0.563072
+  Corpus Return: 1.4077%
+  Final Corpus Value: 1.014077
+------------------------------
+
+ANALYSIS FOR November 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.003963
+  Combined Metric: -0.261791
+  Corpus Return: -2.1816%
+  Final Corpus Value: 0.978184
+------------------------------
+
+ANALYSIS FOR December 2021
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.012983
+  Combined Metric: -0.802974
+  Corpus Return: -2.3420%
+  Final Corpus Value: 0.976580
+------------------------------
+
+YEAR 2021 SUMMARY
+==============================
+Average Monthly Predictions: 1.27
+Average Mean Performance: 0.000694
+Average Combined Metric: 0.017642
+Average Monthly Corpus Return: -0.2202%
+==============================
+
+
+ANALYSIS FOR YEAR 2022
+==================================================
+
+ANALYSIS FOR January 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.011582
+  Combined Metric: 0.670931
+  Corpus Return: 3.3547%
+  Final Corpus Value: 1.033547
+------------------------------
+
+ANALYSIS FOR February 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.000951
+  Combined Metric: 0.033069
+  Corpus Return: 0.3031%
+  Final Corpus Value: 1.003031
+------------------------------
+
+ANALYSIS FOR March 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.011782
+  Combined Metric: -0.730910
+  Corpus Return: -1.2182%
+  Final Corpus Value: 0.987818
+------------------------------
+
+ANALYSIS FOR April 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.003244
+  Combined Metric: 0.170625
+  Corpus Return: 0.5687%
+  Final Corpus Value: 1.005687
+------------------------------
+
+ANALYSIS FOR May 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: -0.001254
+  Combined Metric: -0.099233
+  Corpus Return: -1.0750%
+  Final Corpus Value: 0.989250
+------------------------------
+
+ANALYSIS FOR June 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: -0.008759
+  Combined Metric: -0.549554
+  Corpus Return: -2.0615%
+  Final Corpus Value: 0.979385
+------------------------------
+
+ANALYSIS FOR July 2022
+------------------------------
+No predictions for July 2022
+
+ANALYSIS FOR August 2022
+------------------------------
+No predictions for August 2022
+
+ANALYSIS FOR September 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: -0.014524
+  Combined Metric: -0.895467
+  Corpus Return: -0.7462%
+  Final Corpus Value: 0.992538
+------------------------------
+
+ANALYSIS FOR October 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: -0.004012
+  Combined Metric: -0.264697
+  Corpus Return: -1.3987%
+  Final Corpus Value: 0.986013
+------------------------------
+
+ANALYSIS FOR November 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.004468
+  Combined Metric: 0.244106
+  Corpus Return: 1.8265%
+  Final Corpus Value: 1.018265
+------------------------------
+
+ANALYSIS FOR December 2022
+------------------------------
+
+Monthly Summary:
+  Number of Predictions: 1
+  Mean Performance: 0.001036
+  Combined Metric: 0.038173
+  Corpus Return: 0.0636%
+  Final Corpus Value: 1.000636
+------------------------------
+
+YEAR 2022 SUMMARY
+==============================
+Average Monthly Predictions: 1.30
+Average Mean Performance: -0.001905
+Average Combined Metric: -0.138296
+Average Monthly Corpus Return: -0.0383%
+==============================
+
+
+OVERALL SUMMARY (2018-2022)
+==================================================
+Total Months Analyzed: 52
+Average Monthly Predictions: 1.65
+Average Mean Performance: 0.000694
+Average Combined Metric: 0.017670
+Average Monthly Corpus Return: -0.4239%
