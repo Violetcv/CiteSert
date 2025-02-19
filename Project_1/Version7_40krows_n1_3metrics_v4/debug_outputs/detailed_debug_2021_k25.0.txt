@@ -1,0 +1,195 @@
+DETAILED DEBUGGING FOR K=25.0% - YEAR 2021
+==================================================
+
+
+ANALYSIS FOR January 2021
+==================================================
+Training Period: 2019-10-31 00:00:00 to 2020-12-31 00:00:00
+Test Period: 2021-01-01 00:00:00 to 2021-01-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 54
+  Mean Performance: -0.002841
+  Combined Metric: -0.174998
+  Corpus Return: -2.4990%
+  Final Corpus Value: 0.975010
+--------------------------------------------------
+
+ANALYSIS FOR February 2021
+==================================================
+Training Period: 2019-11-30 00:00:00 to 2021-01-31 00:00:00
+Test Period: 2021-02-01 00:00:00 to 2021-02-28 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 42
+  Mean Performance: -0.008035
+  Combined Metric: -0.354260
+  Corpus Return: -9.1691%
+  Final Corpus Value: 0.908309
+--------------------------------------------------
+
+ANALYSIS FOR March 2021
+==================================================
+Training Period: 2019-12-28 00:00:00 to 2021-02-28 00:00:00
+Test Period: 2021-03-01 00:00:00 to 2021-03-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 15
+  Mean Performance: 0.003223
+  Combined Metric: 0.042348
+  Corpus Return: 1.8759%
+  Final Corpus Value: 1.018759
+--------------------------------------------------
+
+ANALYSIS FOR April 2021
+==================================================
+Training Period: 2020-01-31 00:00:00 to 2021-03-31 00:00:00
+Test Period: 2021-04-01 00:00:00 to 2021-04-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 9
+  Mean Performance: -0.013856
+  Combined Metric: -0.128307
+  Corpus Return: -3.2077%
+  Final Corpus Value: 0.967923
+--------------------------------------------------
+
+ANALYSIS FOR May 2021
+==================================================
+Training Period: 2020-02-29 00:00:00 to 2021-04-30 00:00:00
+Test Period: 2021-05-01 00:00:00 to 2021-05-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 32
+  Mean Performance: -0.002764
+  Combined Metric: -0.101259
+  Corpus Return: -2.1913%
+  Final Corpus Value: 0.978087
+--------------------------------------------------
+
+ANALYSIS FOR June 2021
+==================================================
+Training Period: 2020-03-31 00:00:00 to 2021-05-31 00:00:00
+Test Period: 2021-06-01 00:00:00 to 2021-06-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 44
+  Mean Performance: -0.003216
+  Combined Metric: -0.159114
+  Corpus Return: -3.9043%
+  Final Corpus Value: 0.960957
+--------------------------------------------------
+
+ANALYSIS FOR July 2021
+==================================================
+Training Period: 2020-04-30 00:00:00 to 2021-06-30 00:00:00
+Test Period: 2021-07-01 00:00:00 to 2021-07-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 34
+  Mean Performance: 0.002953
+  Combined Metric: 0.086791
+  Corpus Return: 2.4332%
+  Final Corpus Value: 1.024332
+--------------------------------------------------
+
+ANALYSIS FOR August 2021
+==================================================
+Training Period: 2020-05-31 00:00:00 to 2021-07-31 00:00:00
+Test Period: 2021-08-01 00:00:00 to 2021-08-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 49
+  Mean Performance: -0.002882
+  Combined Metric: -0.160835
+  Corpus Return: -2.0126%
+  Final Corpus Value: 0.979874
+--------------------------------------------------
+
+ANALYSIS FOR September 2021
+==================================================
+Training Period: 2020-06-30 00:00:00 to 2021-08-31 00:00:00
+Test Period: 2021-09-01 00:00:00 to 2021-09-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 2
+  Mean Performance: 0.044477
+  Combined Metric: 0.088155
+  Corpus Return: 2.2039%
+  Final Corpus Value: 1.022039
+--------------------------------------------------
+
+ANALYSIS FOR October 2021
+==================================================
+Training Period: 2020-07-30 00:00:00 to 2021-09-30 00:00:00
+Test Period: 2021-10-01 00:00:00 to 2021-10-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 14
+  Mean Performance: 0.012370
+  Combined Metric: 0.167574
+  Corpus Return: 3.8002%
+  Final Corpus Value: 1.038002
+--------------------------------------------------
+
+ANALYSIS FOR November 2021
+==================================================
+Training Period: 2020-08-31 00:00:00 to 2021-10-31 00:00:00
+Test Period: 2021-11-01 00:00:00 to 2021-11-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 38
+  Mean Performance: -0.007938
+  Combined Metric: -0.316827
+  Corpus Return: -7.7045%
+  Final Corpus Value: 0.922955
+--------------------------------------------------
+
+ANALYSIS FOR December 2021
+==================================================
+Training Period: 2020-09-30 00:00:00 to 2021-11-30 00:00:00
+Test Period: 2021-12-01 00:00:00 to 2021-12-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 12
+  Mean Performance: -0.001428
+  Combined Metric: -0.021935
+  Corpus Return: -0.5484%
+  Final Corpus Value: 0.994516
+--------------------------------------------------
+
+YEAR 2021 SUMMARY
+==================================================
+
+Monthly Metrics:
+        month  mean_performance  num_predictions  combined_metric  corpus_return  final_corpus
+0     January         -0.002841               54        -0.174998      -0.024990      0.975010
+1    February         -0.008035               42        -0.354260      -0.091691      0.908309
+2       March          0.003223               15         0.042348       0.018759      1.018759
+3       April         -0.013856                9        -0.128307      -0.032077      0.967923
+4         May         -0.002764               32        -0.101259      -0.021913      0.978087
+5        June         -0.003216               44        -0.159114      -0.039043      0.960957
+6        July          0.002953               34         0.086791       0.024332      1.024332
+7      August         -0.002882               49        -0.160835      -0.020126      0.979874
+8   September          0.044477                2         0.088155       0.022039      1.022039
+9     October          0.012370               14         0.167574       0.038002      1.038002
+10   November         -0.007938               38        -0.316827      -0.077045      0.922955
+11   December         -0.001428               12        -0.021935      -0.005484      0.994516
+
+Annual Averages:
+Average Monthly Predictions: 28.75
+Average Mean Performance: 0.001672
+Average Combined Metric: -0.086056
+Average Monthly Corpus Return: -1.7436%

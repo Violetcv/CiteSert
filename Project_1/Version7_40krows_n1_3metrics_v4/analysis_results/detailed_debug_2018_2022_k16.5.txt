@@ -1,0 +1,543 @@
+ANALYSIS FOR K=16.5% (2018-2022)
+==================================================
+
+
+Results for January 2018:
+  date: 2018-01-01 00:00:00
+  year: 2018
+  month: January
+  mean_performance: -0.001526
+  num_predictions: 110
+  corpus_return: -0.012356
+  final_corpus: 0.987644
+
+Results for February 2018:
+  date: 2018-02-01 00:00:00
+  year: 2018
+  month: February
+  mean_performance: -0.000483
+  num_predictions: 187
+  corpus_return: -0.014489
+  final_corpus: 0.985511
+
+Results for March 2018:
+  date: 2018-03-01 00:00:00
+  year: 2018
+  month: March
+  mean_performance: 0.000736
+  num_predictions: 16
+  corpus_return: 0.001344
+  final_corpus: 1.001344
+
+Results for April 2018:
+  date: 2018-04-01 00:00:00
+  year: 2018
+  month: April
+  mean_performance: 0.005875
+  num_predictions: 63
+  corpus_return: 0.057709
+  final_corpus: 1.057709
+
+Results for May 2018:
+  date: 2018-05-01 00:00:00
+  year: 2018
+  month: May
+  mean_performance: -0.001442
+  num_predictions: 112
+  corpus_return: -0.024953
+  final_corpus: 0.975047
+
+Results for June 2018:
+  date: 2018-06-01 00:00:00
+  year: 2018
+  month: June
+  mean_performance: -0.004496
+  num_predictions: 15
+  corpus_return: -0.018360
+  final_corpus: 0.981640
+
+Results for July 2018:
+  date: 2018-07-01 00:00:00
+  year: 2018
+  month: July
+  mean_performance: -0.000487
+  num_predictions: 42
+  corpus_return: -0.003726
+  final_corpus: 0.996274
+
+Results for August 2018:
+  date: 2018-08-01 00:00:00
+  year: 2018
+  month: August
+  mean_performance: 0.000537
+  num_predictions: 102
+  corpus_return: 0.010447
+  final_corpus: 1.010447
+
+Results for September 2018:
+  date: 2018-09-01 00:00:00
+  year: 2018
+  month: September
+  mean_performance: -0.014836
+  num_predictions: 20
+  corpus_return: -0.074866
+  final_corpus: 0.925134
+
+Results for October 2018:
+  date: 2018-10-01 00:00:00
+  year: 2018
+  month: October
+  mean_performance: 0.003077
+  num_predictions: 106
+  corpus_return: -0.003159
+  final_corpus: 0.996841
+
+Results for November 2018:
+  date: 2018-11-01 00:00:00
+  year: 2018
+  month: November
+  mean_performance: -0.009163
+  num_predictions: 82
+  corpus_return: -0.102125
+  final_corpus: 0.897875
+
+Results for December 2018:
+  date: 2018-12-01 00:00:00
+  year: 2018
+  month: December
+  mean_performance: 0.072137
+  num_predictions: 1
+  corpus_return: 0.017934
+  final_corpus: 1.017934
+
+Results for January 2019:
+  date: 2019-01-01 00:00:00
+  year: 2019
+  month: January
+  mean_performance: -0.006660
+  num_predictions: 13
+  corpus_return: -0.022946
+  final_corpus: 0.977054
+
+Results for February 2019:
+  date: 2019-02-01 00:00:00
+  year: 2019
+  month: February
+  mean_performance: 0.001359
+  num_predictions: 18
+  corpus_return: 0.004315
+  final_corpus: 1.004315
+
+Results for March 2019:
+  date: 2019-03-01 00:00:00
+  year: 2019
+  month: March
+  mean_performance: 0.001696
+  num_predictions: 5
+  corpus_return: 0.001620
+  final_corpus: 1.001620
+
+Results for April 2019:
+  date: 2019-04-01 00:00:00
+  year: 2019
+  month: April
+  mean_performance: -0.002574
+  num_predictions: 21
+  corpus_return: -0.015611
+  final_corpus: 0.984389
+
+Results for May 2019:
+  date: 2019-05-01 00:00:00
+  year: 2019
+  month: May
+  mean_performance: 0.009874
+  num_predictions: 26
+  corpus_return: 0.050843
+  final_corpus: 1.050843
+
+Results for June 2019:
+  date: 2019-06-01 00:00:00
+  year: 2019
+  month: June
+  mean_performance: 0.006797
+  num_predictions: 23
+  corpus_return: 0.036783
+  final_corpus: 1.036783
+
+Results for July 2019:
+  date: 2019-07-01 00:00:00
+  year: 2019
+  month: July
+  mean_performance: -0.011019
+  num_predictions: 70
+  corpus_return: -0.131836
+  final_corpus: 0.868164
+
+Results for August 2019:
+  date: 2019-08-01 00:00:00
+  year: 2019
+  month: August
+  mean_performance: 0.002616
+  num_predictions: 61
+  corpus_return: 0.024503
+  final_corpus: 1.024503
+
+Results for September 2019:
+  date: 2019-09-01 00:00:00
+  year: 2019
+  month: September
+  mean_performance: 0.014504
+  num_predictions: 9
+  corpus_return: 0.031733
+  final_corpus: 1.031733
+
+Results for October 2019:
+  date: 2019-10-01 00:00:00
+  year: 2019
+  month: October
+  mean_performance: -0.005711
+  num_predictions: 28
+  corpus_return: -0.013399
+  final_corpus: 0.986601
+
+Results for November 2019:
+  date: 2019-11-01 00:00:00
+  year: 2019
+  month: November
+  mean_performance: -0.000630
+  num_predictions: 57
+  corpus_return: -0.003804
+  final_corpus: 0.996196
+
+Results for December 2019:
+  date: 2019-12-01 00:00:00
+  year: 2019
+  month: December
+  mean_performance: 0.000162
+  num_predictions: 17
+  corpus_return: -0.001010
+  final_corpus: 0.998990
+
+Results for January 2020:
+  date: 2020-01-01 00:00:00
+  year: 2020
+  month: January
+  mean_performance: -0.000080
+  num_predictions: 29
+  corpus_return: -0.009330
+  final_corpus: 0.990670
+
+Results for February 2020:
+  date: 2020-02-01 00:00:00
+  year: 2020
+  month: February
+  mean_performance: -0.002014
+  num_predictions: 71
+  corpus_return: -0.023643
+  final_corpus: 0.976357
+
+Results for March 2020:
+  date: 2020-03-01 00:00:00
+  year: 2020
+  month: March
+  mean_performance: -0.001534
+  num_predictions: 17
+  corpus_return: -0.008221
+  final_corpus: 0.991779
+
+Results for April 2020:
+  date: 2020-04-01 00:00:00
+  year: 2020
+  month: April
+  mean_performance: 0.010066
+  num_predictions: 49
+  corpus_return: 0.079715
+  final_corpus: 1.079715
+
+Results for May 2020:
+  date: 2020-05-01 00:00:00
+  year: 2020
+  month: May
+  mean_performance: -0.006061
+  num_predictions: 82
+  corpus_return: -0.117666
+  final_corpus: 0.882334
+
+Results for June 2020:
+  date: 2020-06-01 00:00:00
+  year: 2020
+  month: June
+  mean_performance: 0.000079
+  num_predictions: 63
+  corpus_return: -0.009526
+  final_corpus: 0.990474
+
+Results for July 2020:
+  date: 2020-07-01 00:00:00
+  year: 2020
+  month: July
+  mean_performance: -0.005187
+  num_predictions: 128
+  corpus_return: -0.083344
+  final_corpus: 0.916656
+
+Results for August 2020:
+  date: 2020-08-01 00:00:00
+  year: 2020
+  month: August
+  mean_performance: -0.002038
+  num_predictions: 86
+  corpus_return: -0.043574
+  final_corpus: 0.956426
+
+Results for September 2020:
+  date: 2020-09-01 00:00:00
+  year: 2020
+  month: September
+  mean_performance: 0.015682
+  num_predictions: 7
+  corpus_return: 0.026743
+  final_corpus: 1.026743
+
+Results for October 2020:
+  date: 2020-10-01 00:00:00
+  year: 2020
+  month: October
+  mean_performance: -0.002472
+  num_predictions: 59
+  corpus_return: -0.021146
+  final_corpus: 0.978854
+
+Results for November 2020:
+  date: 2020-11-01 00:00:00
+  year: 2020
+  month: November
+  mean_performance: -0.002839
+  num_predictions: 80
+  corpus_return: -0.040685
+  final_corpus: 0.959315
+
+Results for December 2020:
+  date: 2020-12-01 00:00:00
+  year: 2020
+  month: December
+  mean_performance: 0.003186
+  num_predictions: 21
+  corpus_return: 0.014793
+  final_corpus: 1.014793
+
+Results for January 2021:
+  date: 2021-01-01 00:00:00
+  year: 2021
+  month: January
+  mean_performance: -0.001359
+  num_predictions: 20
+  corpus_return: -0.008794
+  final_corpus: 0.991206
+
+Results for February 2021:
+  date: 2021-02-01 00:00:00
+  year: 2021
+  month: February
+  mean_performance: -0.008077
+  num_predictions: 38
+  corpus_return: -0.083639
+  final_corpus: 0.916361
+
+Results for March 2021:
+  date: 2021-03-01 00:00:00
+  year: 2021
+  month: March
+  mean_performance: 0.003223
+  num_predictions: 15
+  corpus_return: 0.018759
+  final_corpus: 1.018759
+
+Results for April 2021:
+  date: 2021-04-01 00:00:00
+  year: 2021
+  month: April
+  mean_performance: -0.012641
+  num_predictions: 8
+  corpus_return: -0.026082
+  final_corpus: 0.973918
+
+Results for May 2021:
+  date: 2021-05-01 00:00:00
+  year: 2021
+  month: May
+  mean_performance: -0.002764
+  num_predictions: 32
+  corpus_return: -0.021913
+  final_corpus: 0.978087
+
+Results for June 2021:
+  date: 2021-06-01 00:00:00
+  year: 2021
+  month: June
+  mean_performance: -0.004299
+  num_predictions: 35
+  corpus_return: -0.040382
+  final_corpus: 0.959618
+
+Results for July 2021:
+  date: 2021-07-01 00:00:00
+  year: 2021
+  month: July
+  mean_performance: -0.005502
+  num_predictions: 21
+  corpus_return: -0.029599
+  final_corpus: 0.970401
+
+Results for August 2021:
+  date: 2021-08-01 00:00:00
+  year: 2021
+  month: August
+  mean_performance: 0.000314
+  num_predictions: 28
+  corpus_return: -0.000255
+  final_corpus: 0.999745
+
+Results for September 2021:
+  date: 2021-09-01 00:00:00
+  year: 2021
+  month: September
+  mean_performance: 0.044477
+  num_predictions: 2
+  corpus_return: 0.022039
+  final_corpus: 1.022039
+
+Results for October 2021:
+  date: 2021-10-01 00:00:00
+  year: 2021
+  month: October
+  mean_performance: 0.012370
+  num_predictions: 14
+  corpus_return: 0.038002
+  final_corpus: 1.038002
+
+Results for November 2021:
+  date: 2021-11-01 00:00:00
+  year: 2021
+  month: November
+  mean_performance: -0.006933
+  num_predictions: 37
+  corpus_return: -0.065603
+  final_corpus: 0.934397
+
+Results for December 2021:
+  date: 2021-12-01 00:00:00
+  year: 2021
+  month: December
+  mean_performance: -0.003306
+  num_predictions: 10
+  corpus_return: -0.009265
+  final_corpus: 0.990735
+
+Results for January 2022:
+  date: 2022-01-01 00:00:00
+  year: 2022
+  month: January
+  mean_performance: 0.005415
+  num_predictions: 19
+  corpus_return: 0.023820
+  final_corpus: 1.023820
+
+Results for February 2022:
+  date: 2022-02-01 00:00:00
+  year: 2022
+  month: February
+  mean_performance: -0.000615
+  num_predictions: 27
+  corpus_return: -0.006850
+  final_corpus: 0.993150
+
+Results for March 2022:
+  date: 2022-03-01 00:00:00
+  year: 2022
+  month: March
+  mean_performance: 0.003296
+  num_predictions: 10
+  corpus_return: 0.007241
+  final_corpus: 1.007241
+
+Results for April 2022:
+  date: 2022-04-01 00:00:00
+  year: 2022
+  month: April
+  mean_performance: -0.003605
+  num_predictions: 27
+  corpus_return: -0.036094
+  final_corpus: 0.963906
+
+Results for May 2022:
+  date: 2022-05-01 00:00:00
+  year: 2022
+  month: May
+  mean_performance: -0.000167
+  num_predictions: 29
+  corpus_return: -0.004109
+  final_corpus: 0.995891
+
+Results for June 2022:
+  date: 2022-06-01 00:00:00
+  year: 2022
+  month: June
+  mean_performance: -0.005645
+  num_predictions: 20
+  corpus_return: -0.025653
+  final_corpus: 0.974347
+
+Results for July 2022:
+  date: 2022-07-01 00:00:00
+  year: 2022
+  month: July
+  mean_performance: -0.001067
+  num_predictions: 25
+  corpus_return: -0.011099
+  final_corpus: 0.988901
+
+Results for August 2022:
+  date: 2022-08-01 00:00:00
+  year: 2022
+  month: August
+  mean_performance: 0.010895
+  num_predictions: 26
+  corpus_return: 0.042676
+  final_corpus: 1.042676
+
+Results for September 2022:
+  date: 2022-09-01 00:00:00
+  year: 2022
+  month: September
+  mean_performance: -0.000891
+  num_predictions: 19
+  corpus_return: -0.006132
+  final_corpus: 0.993868
+
+Results for October 2022:
+  date: 2022-10-01 00:00:00
+  year: 2022
+  month: October
+  mean_performance: -0.003479
+  num_predictions: 27
+  corpus_return: -0.013070
+  final_corpus: 0.986930
+
+Results for November 2022:
+  date: 2022-11-01 00:00:00
+  year: 2022
+  month: November
+  mean_performance: -0.002435
+  num_predictions: 98
+  corpus_return: -0.034007
+  final_corpus: 0.965993
+
+Results for December 2022:
+  date: 2022-12-01 00:00:00
+  year: 2022
+  month: December
+  mean_performance: 0.008336
+  num_predictions: 12
+  corpus_return: 0.023809
+  final_corpus: 1.023809
