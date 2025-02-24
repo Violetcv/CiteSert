@@ -1,0 +1,195 @@
+DETAILED DEBUGGING FOR K=25.0% - YEAR 2018
+==================================================
+
+
+ANALYSIS FOR January 2018
+==================================================
+Training Period: 2016-10-31 00:00:00 to 2017-12-31 00:00:00
+Test Period: 2018-01-01 00:00:00 to 2018-01-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 124
+  Mean Performance: -0.001822
+  Combined Metric: -0.275565
+  Corpus Return: -1.4969%
+  Final Corpus Value: 0.985031
+--------------------------------------------------
+
+ANALYSIS FOR February 2018
+==================================================
+Training Period: 2016-11-30 00:00:00 to 2018-01-31 00:00:00
+Test Period: 2018-02-01 00:00:00 to 2018-02-28 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 206
+  Mean Performance: -0.001057
+  Combined Metric: -0.300146
+  Corpus Return: -3.9072%
+  Final Corpus Value: 0.960928
+--------------------------------------------------
+
+ANALYSIS FOR March 2018
+==================================================
+Training Period: 2016-12-28 00:00:00 to 2018-02-28 00:00:00
+Test Period: 2018-03-01 00:00:00 to 2018-03-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 27
+  Mean Performance: -0.000848
+  Combined Metric: -0.033703
+  Corpus Return: -0.3127%
+  Final Corpus Value: 0.996873
+--------------------------------------------------
+
+ANALYSIS FOR April 2018
+==================================================
+Training Period: 2017-01-31 00:00:00 to 2018-03-31 00:00:00
+Test Period: 2018-04-01 00:00:00 to 2018-04-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 63
+  Mean Performance: 0.005875
+  Combined Metric: 0.344940
+  Corpus Return: 5.7709%
+  Final Corpus Value: 1.057709
+--------------------------------------------------
+
+ANALYSIS FOR May 2018
+==================================================
+Training Period: 2017-02-28 00:00:00 to 2018-04-30 00:00:00
+Test Period: 2018-05-01 00:00:00 to 2018-05-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 119
+  Mean Performance: -0.002432
+  Combined Metric: -0.336985
+  Corpus Return: -4.1553%
+  Final Corpus Value: 0.958447
+--------------------------------------------------
+
+ANALYSIS FOR June 2018
+==================================================
+Training Period: 2017-03-31 00:00:00 to 2018-05-31 00:00:00
+Test Period: 2018-06-01 00:00:00 to 2018-06-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 15
+  Mean Performance: -0.004496
+  Combined Metric: -0.073440
+  Corpus Return: -1.8360%
+  Final Corpus Value: 0.981640
+--------------------------------------------------
+
+ANALYSIS FOR July 2018
+==================================================
+Training Period: 2017-04-30 00:00:00 to 2018-06-30 00:00:00
+Test Period: 2018-07-01 00:00:00 to 2018-07-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 43
+  Mean Performance: -0.001144
+  Combined Metric: -0.066384
+  Corpus Return: -0.6318%
+  Final Corpus Value: 0.993682
+--------------------------------------------------
+
+ANALYSIS FOR August 2018
+==================================================
+Training Period: 2017-05-31 00:00:00 to 2018-07-31 00:00:00
+Test Period: 2018-08-01 00:00:00 to 2018-08-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 105
+  Mean Performance: 0.000065
+  Combined Metric: -0.035203
+  Corpus Return: 0.6923%
+  Final Corpus Value: 1.006923
+--------------------------------------------------
+
+ANALYSIS FOR September 2018
+==================================================
+Training Period: 2017-06-30 00:00:00 to 2018-08-31 00:00:00
+Test Period: 2018-09-01 00:00:00 to 2018-09-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 27
+  Mean Performance: -0.016256
+  Combined Metric: -0.449699
+  Corpus Return: -10.6207%
+  Final Corpus Value: 0.893793
+--------------------------------------------------
+
+ANALYSIS FOR October 2018
+==================================================
+Training Period: 2017-07-30 00:00:00 to 2018-09-30 00:00:00
+Test Period: 2018-10-01 00:00:00 to 2018-10-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 113
+  Mean Performance: 0.002612
+  Combined Metric: 0.249948
+  Corpus Return: -1.1811%
+  Final Corpus Value: 0.988189
+--------------------------------------------------
+
+ANALYSIS FOR November 2018
+==================================================
+Training Period: 2017-08-31 00:00:00 to 2018-10-31 00:00:00
+Test Period: 2018-11-01 00:00:00 to 2018-11-30 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 89
+  Mean Performance: -0.007299
+  Combined Metric: -0.685190
+  Corpus Return: -8.5288%
+  Final Corpus Value: 0.914712
+--------------------------------------------------
+
+ANALYSIS FOR December 2018
+==================================================
+Training Period: 2017-09-30 00:00:00 to 2018-11-30 00:00:00
+Test Period: 2018-12-01 00:00:00 to 2018-12-31 00:00:00
+
+
+Monthly Summary:
+  Number of Predictions: 4
+  Mean Performance: 0.010165
+  Combined Metric: 0.039062
+  Corpus Return: 0.9765%
+  Final Corpus Value: 1.009765
+--------------------------------------------------
+
+YEAR 2018 SUMMARY
+==================================================
+
+Monthly Metrics:
+        month  mean_performance  num_predictions  combined_metric  corpus_return  final_corpus
+0     January         -0.001822              124        -0.275565      -0.014969      0.985031
+1    February         -0.001057              206        -0.300146      -0.039072      0.960928
+2       March         -0.000848               27        -0.033703      -0.003127      0.996873
+3       April          0.005875               63         0.344940       0.057709      1.057709
+4         May         -0.002432              119        -0.336985      -0.041553      0.958447
+5        June         -0.004496               15        -0.073440      -0.018360      0.981640
+6        July         -0.001144               43        -0.066384      -0.006318      0.993682
+7      August          0.000065              105        -0.035203       0.006923      1.006923
+8   September         -0.016256               27        -0.449699      -0.106207      0.893793
+9     October          0.002612              113         0.249948      -0.011811      0.988189
+10   November         -0.007299               89        -0.685190      -0.085288      0.914712
+11   December          0.010165                4         0.039062       0.009765      1.009765
+
+Annual Averages:
+Average Monthly Predictions: 77.92
+Average Mean Performance: -0.001386
+Average Combined Metric: -0.135197
+Average Monthly Corpus Return: -2.1026%

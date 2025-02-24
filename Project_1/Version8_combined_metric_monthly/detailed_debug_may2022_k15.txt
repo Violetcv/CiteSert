@@ -1,0 +1,532 @@
+DETAILED DEBUGGING FOR K=15.0%
+==================================================
+
+Training Period: 2021-02-28 00:00:00 to 2022-04-30 00:00:00
+Test Period: 2022-05-01 00:00:00 to 2022-05-31 00:00:00
+
+AUTHOR SELECTION PROCESS
+------------------------------
+Training data shape: (3743, 7)
+Unique authors in training: 30
+
+TOP SELECTED AUTHORS:
+             author  total_perf  mean_perf  num_predictions
+10        Edelweiss    0.390668   0.002245              174
+8     CD Equisearch    0.163266   0.006047               27
+13  HDFC Securities    0.133151   0.026630                5
+0       AUM Capital    0.125917   0.011447               11
+28          Ventura    0.096469   0.004823               20
+
+May 2022 TRADING ANALYSIS
+------------------------------
+
+DATE: 2022-05-02
+Starting corpus:  1.000000
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 24.533001
+  Actual Return:   -0.052129
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.013132
+
+Daily Summary:
+  Total profit/loss: -0.013132
+  Old corpus:  1.000000
+  New corpus:  0.986868
+  Daily return: -1.3132%
+--------------------------------------------------
+
+DATE: 2022-05-03
+Starting corpus:  0.986868
+Number of trades: 2
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 35.882597
+  Actual Return:   -0.007429
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.001957
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 21.991899
+  Actual Return:   -0.028936
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.007334
+
+Daily Summary:
+  Total profit/loss: -0.009291
+  Old corpus:  0.986868
+  New corpus:  0.977577
+  Daily return: -0.9415%
+--------------------------------------------------
+
+DATE: 2022-05-04
+Starting corpus:  0.977577
+Number of trades: 1
+
+Trade:
+  Author: CD Equisearch
+  Expected Return: 32.063161
+  Actual Return:   -0.002214
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.000653
+
+Daily Summary:
+  Total profit/loss: -0.000653
+  Old corpus:  0.977577
+  New corpus:  0.976923
+  Daily return: -0.0668%
+--------------------------------------------------
+
+DATE: 2022-05-10
+Starting corpus:  0.976923
+Number of trades: 2
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 26.024072
+  Actual Return:   -0.012273
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.003168
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 14.546779
+  Actual Return:   0.051599
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.012800
+
+Daily Summary:
+  Total profit/loss:  0.009631
+  Old corpus:  0.976923
+  New corpus:  0.986555
+  Daily return:  0.9859%
+--------------------------------------------------
+
+DATE: 2022-05-12
+Starting corpus:  0.986555
+Number of trades: 2
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 29.570372
+  Actual Return:   0.003316
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.000729
+
+Trade:
+  Author: AUM Capital
+  Expected Return: 35.155096
+  Actual Return:   0.053712
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.013328
+
+Daily Summary:
+  Total profit/loss:  0.014057
+  Old corpus:  0.986555
+  New corpus:  1.000612
+  Daily return:  1.4249%
+--------------------------------------------------
+
+DATE: 2022-05-13
+Starting corpus:  1.000612
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 18.978338
+  Actual Return:   0.048172
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.011943
+
+Daily Summary:
+  Total profit/loss:  0.011943
+  Old corpus:  1.000612
+  New corpus:  1.012555
+  Daily return:  1.1936%
+--------------------------------------------------
+
+DATE: 2022-05-14
+Starting corpus:  1.012555
+Number of trades: 2
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 39.533320
+  Actual Return:   -0.034364
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.008691
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 30.729249
+  Actual Return:   0.043954
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.010889
+
+Daily Summary:
+  Total profit/loss:  0.002198
+  Old corpus:  1.012555
+  New corpus:  1.014752
+  Daily return:  0.2170%
+--------------------------------------------------
+
+DATE: 2022-05-16
+Starting corpus:  1.014752
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 15.586625
+  Actual Return:   -0.006690
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.001773
+
+Daily Summary:
+  Total profit/loss: -0.001773
+  Old corpus:  1.014752
+  New corpus:  1.012980
+  Daily return: -0.1747%
+--------------------------------------------------
+
+DATE: 2022-05-17
+Starting corpus:  1.012980
+Number of trades: 2
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 37.813212
+  Actual Return:   -0.016377
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.004194
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 18.897748
+  Actual Return:   -0.018789
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.004797
+
+Daily Summary:
+  Total profit/loss: -0.008991
+  Old corpus:  1.012980
+  New corpus:  1.003988
+  Daily return: -0.8876%
+--------------------------------------------------
+
+DATE: 2022-05-18
+Starting corpus:  1.003988
+Number of trades: 3
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 40.380158
+  Actual Return:   -0.012531
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.003233
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 36.470147
+  Actual Return:   0.012098
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.002925
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 12.173234
+  Actual Return:   0.023476
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.005769
+
+Daily Summary:
+  Total profit/loss:  0.005461
+  Old corpus:  1.003988
+  New corpus:  1.009449
+  Daily return:  0.5439%
+--------------------------------------------------
+
+DATE: 2022-05-19
+Starting corpus:  1.009449
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 44.140197
+  Actual Return:   -0.012983
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.003346
+
+Daily Summary:
+  Total profit/loss: -0.003346
+  Old corpus:  1.009449
+  New corpus:  1.006103
+  Daily return: -0.3314%
+--------------------------------------------------
+
+DATE: 2022-05-20
+Starting corpus:  1.006103
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 49.303251
+  Actual Return:   -0.013536
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.003484
+
+Daily Summary:
+  Total profit/loss: -0.003484
+  Old corpus:  1.006103
+  New corpus:  1.002620
+  Daily return: -0.3463%
+--------------------------------------------------
+
+DATE: 2022-05-21
+Starting corpus:  1.002620
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 45.200919
+  Actual Return:   0.001101
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.000175
+
+Daily Summary:
+  Total profit/loss:  0.000175
+  Old corpus:  1.002620
+  New corpus:  1.002795
+  Daily return:  0.0175%
+--------------------------------------------------
+
+DATE: 2022-05-23
+Starting corpus:  1.002795
+Number of trades: 1
+
+Trade:
+  Author: CD Equisearch
+  Expected Return: 21.916339
+  Actual Return:   -0.023735
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.006034
+
+Daily Summary:
+  Total profit/loss: -0.006034
+  Old corpus:  1.002795
+  New corpus:  0.996761
+  Daily return: -0.6017%
+--------------------------------------------------
+
+DATE: 2022-05-25
+Starting corpus:  0.996761
+Number of trades: 2
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 45.518044
+  Actual Return:   -0.008475
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.002219
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 29.133681
+  Actual Return:   -0.007540
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.001985
+
+Daily Summary:
+  Total profit/loss: -0.004204
+  Old corpus:  0.996761
+  New corpus:  0.992557
+  Daily return: -0.4217%
+--------------------------------------------------
+
+DATE: 2022-05-26
+Starting corpus:  0.992557
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 44.186326
+  Actual Return:   0.017033
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.004158
+
+Daily Summary:
+  Total profit/loss:  0.004158
+  Old corpus:  0.992557
+  New corpus:  0.996716
+  Daily return:  0.4189%
+--------------------------------------------------
+
+DATE: 2022-05-27
+Starting corpus:  0.996716
+Number of trades: 3
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 13.944043
+  Actual Return:   0.033521
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.008280
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 46.750524
+  Actual Return:   0.044180
+  Sign match: True
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: 0.010945
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 25.450420
+  Actual Return:   -0.012536
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.003234
+
+Daily Summary:
+  Total profit/loss:  0.015991
+  Old corpus:  0.996716
+  New corpus:  1.012707
+  Daily return:  1.6044%
+--------------------------------------------------
+
+DATE: 2022-05-28
+Starting corpus:  1.012707
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 38.070870
+  Actual Return:   -0.035333
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.008933
+
+Daily Summary:
+  Total profit/loss: -0.008933
+  Old corpus:  1.012707
+  New corpus:  1.003774
+  Daily return: -0.8821%
+--------------------------------------------------
+
+DATE: 2022-05-31
+Starting corpus:  1.003774
+Number of trades: 1
+
+Trade:
+  Author: Edelweiss
+  Expected Return: 30.372097
+  Actual Return:   -0.031131
+  Sign match: False
+  Trade calculation:
+    Allocation per trade: 0.250000
+    Signed direction: 1
+    Trade return: -0.007883
+
+Daily Summary:
+  Total profit/loss: -0.007883
+  Old corpus:  1.003774
+  New corpus:  0.995891
+  Daily return: -0.7853%
+--------------------------------------------------
+
+COMPARISON OF METRICS
+------------------------------
+Traditional Metrics:
+  Mean Performance: -0.000167
+  Number of Predictions: 29
+  Combined Metric: -0.016437
+
+Corpus Metrics:
+  Initial Corpus: 1.0
+  Final Corpus:  0.995891
+  Corpus Return: -0.4109%
