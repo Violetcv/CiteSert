@@ -7,8 +7,8 @@ import os
 from io import StringIO
 import sys
 
-def debug_december_2021(df_train, df_test, k_percent, output_dir='debug_outputs'):
-    """Detailed debugging function for December 2021 analysis."""
+def debug_July_2018(df_train, df_test, k_percent, output_dir='debug_outputs'):
+    """Detailed debugging function for July 2018 analysis."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
@@ -19,7 +19,7 @@ def debug_december_2021(df_train, df_test, k_percent, output_dir='debug_outputs'
         f.write(f"DETAILED DEBUGGING FOR K={k_percent}%\n")
         f.write("="*50 + "\n\n")
         
-        target_date = pd.to_datetime('2021-12-01')
+        target_date = pd.to_datetime('2018-07-01')
         training_end = target_date - timedelta(days=1)
         training_start = training_end - pd.DateOffset(months=14)
         
@@ -52,8 +52,8 @@ def debug_december_2021(df_train, df_test, k_percent, output_dir='debug_outputs'
         f.write("TOP SELECTED AUTHORS:\n")
         f.write(best_authors.to_string() + "\n\n")
         
-        # 3. December Analysis
-        f.write("DECEMBER TRADING ANALYSIS\n")
+        # 3. July Analysis
+        f.write("July TRADING ANALYSIS\n")
         f.write("-"*30 + "\n")
         
         month_df = df_test[
@@ -156,7 +156,7 @@ def plot_comparison(results_df):
     plt.grid(True)
     
     plt.tight_layout()
-    plt.savefig('december_2021_comparison.png')
+    plt.savefig('July_2018_comparison.png')
     plt.close()
 
 # Main execution
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     df_d1['date'] = pd.to_datetime(df_d1['date'])
     df_d5['date'] = pd.to_datetime(df_d5['date'])
     
-    print("Starting debug analysis for December 2021...")
+    print("Starting debug analysis for July 2018...")
     
     # Debug specific k values
     k_values = [15.0, 25.0]
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     
     for k in k_values:
         print(f"\nAnalyzing k={k}%...")
-        debug_results = debug_december_2021(df_d1, df_d1, k)
+        debug_results = debug_July_2018(df_d1, df_d1, k)
         results.append(debug_results)
         print(f"Debug output saved to debug_outputs/detailed_debug_k{k}.txt")
     
@@ -189,4 +189,4 @@ if __name__ == "__main__":
     print(results_df.to_string(float_format=lambda x: '{:.6f}'.format(x)))
     
     plot_comparison(results_df)
-    print("\nComparison plots saved as 'december_2021_comparison.png'")
+    print("\nComparison plots saved as 'July_2018_comparison.png'")

@@ -7,21 +7,21 @@ import os
 from io import StringIO
 import sys
 
-def debug_year_2021(df_train, df_test, k_percent, output_dir='debug_outputs'):
-    """Detailed debugging function for entire year 2021."""
+def debug_year_2018(df_train, df_test, k_percent, output_dir='debug_outputs'):
+    """Detailed debugging function for entire year 2018."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     
-    log_file = os.path.join(output_dir, f'detailed_debug_2021_k{k_percent}.txt')
+    log_file = os.path.join(output_dir, f'detailed_debug_2018_k{k_percent}.txt')
     monthly_results = []
     
     with open(log_file, 'w') as f:
-        f.write(f"DETAILED DEBUGGING FOR K={k_percent}% - YEAR 2021\n")
+        f.write(f"DETAILED DEBUGGING FOR K={k_percent}% - YEAR 2018\n")
         f.write("="*50 + "\n\n")
         
-        # Analyze each month of 2021
+        # Analyze each month of 2018
         for month in range(1, 13):
-            target_date = pd.to_datetime(f'2021-{month:02d}-01')
+            target_date = pd.to_datetime(f'2018-{month:02d}-01')
             training_end = target_date - timedelta(days=1)
             training_start = training_end - pd.DateOffset(months=14)
             
@@ -102,7 +102,7 @@ def debug_year_2021(df_train, df_test, k_percent, output_dir='debug_outputs'):
             f.write("-"*50 + "\n")
         
         # Year-end summary
-        f.write("\nYEAR 2021 SUMMARY\n")
+        f.write("\nYEAR 2018 SUMMARY\n")
         f.write("="*50 + "\n")
         year_df = pd.DataFrame(monthly_results)
         
@@ -118,7 +118,7 @@ def debug_year_2021(df_train, df_test, k_percent, output_dir='debug_outputs'):
     return year_df
 
 def plot_yearly_comparison(year_df, k_percent):
-    """Plot monthly comparisons for 2021."""
+    """Plot monthly comparisons for 2018."""
     plt.figure(figsize=(15, 15))
     
     # Plot Combined Metric
@@ -149,7 +149,7 @@ def plot_yearly_comparison(year_df, k_percent):
     plt.grid(True)
     
     plt.tight_layout()
-    plt.savefig(f'year_2021_k{k_percent}_comparison.png')
+    plt.savefig(f'year_2018_k{k_percent}_comparison.png')
     plt.close()
 
 # Main execution
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     df_d1['date'] = pd.to_datetime(df_d1['date'])
     df_d5['date'] = pd.to_datetime(df_d5['date'])
     
-    print("Starting analysis for year 2021...")
+    print("Starting analysis for year 2018...")
     
     # Analyze specific k values
     k_values = [15.0, 25.0]
@@ -172,10 +172,10 @@ if __name__ == "__main__":
     
     for k in k_values:
         print(f"\nAnalyzing k={k}%...")
-        year_df = debug_year_2021(df_d1, df_d1, k)
+        year_df = debug_year_2018(df_d1, df_d1, k)
         all_results[k] = year_df
         plot_yearly_comparison(year_df, k)
-        print(f"Results saved to debug_outputs/detailed_debug_2021_k{k}.txt")
-        print(f"Plots saved as year_2021_k{k}_comparison.png")
+        print(f"Results saved to debug_outputs/detailed_debug_2018_k{k}.txt")
+        print(f"Plots saved as year_2018_k{k}_comparison.png")
     
     print("\nAnalysis complete. Check the debug_outputs folder for detailed logs.")

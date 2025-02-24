@@ -1,0 +1,61 @@
+SyntaxError: invalid syntax
+
+(base) C:\Users\disch\Desktop\CiteSert\Project_1\Version7_40krows_n1_3metrics_v4>python Calculate_Performance_3metrics.py
+Testing K percentages:   0%|                                                                                                            | 0/4 [00:00<?, ?it/s]
+
+5.0%
+
+       author  mean_performance  count      month  corpus_return
+81  Edelweiss         -0.012983      7 2021-12-01       -0.02342
+Year 2018 - Average Monthly Corpus Return: -0.8241%
+Year 2019 - Average Monthly Corpus Return: 0.4526%
+Year 2020 - Average Monthly Corpus Return: -1.5706%
+Year 2021 - Average Monthly Corpus Return: -1.3941%
+Year 2022 - Average Monthly Corpus Return: 0.1041%
+ /n
+overall : -0.7121067620322842
+Testing K percentages:  25%|█████████████████████████                                                                           | 1/4 [00:03<00:11,  3.93s/it] 
+
+10.0%
+
+        author  mean_performance  count      month  corpus_return
+149  Edelweiss         -0.012983      7 2021-12-01       -0.02342
+Year 2018 - Average Monthly Corpus Return: -0.9575%
+Year 2019 - Average Monthly Corpus Return: -0.2277%
+Year 2020 - Average Monthly Corpus Return: -1.6389%
+Year 2021 - Average Monthly Corpus Return: -2.2003%
+Year 2022 - Average Monthly Corpus Return: -0.2299%
+ /n
+overall : -1.085466313839355
+Testing K percentages:  50%|██████████████████████████████████████████████████                                                  | 2/4 [00:08<00:08,  4.12s/it] 
+
+15.0%
+
+            author  mean_performance  count      month  corpus_return
+193  CD Equisearch          0.019273      3 2021-12-01      -0.009265
+194      Edelweiss         -0.012983      7 2021-12-01      -0.009265
+Year 2018 - Average Monthly Corpus Return: -0.9810%
+Year 2019 - Average Monthly Corpus Return: -0.9589%
+Year 2020 - Average Monthly Corpus Return: -1.8849%
+Year 2021 - Average Monthly Corpus Return: -1.9508%
+Year 2022 - Average Monthly Corpus Return: -0.6229%
+ /n
+overall : -1.295842935855826
+Testing K percentages:  75%|███████████████████████████████████████████████████████████████████████████                         | 3/4 [00:12<00:04,  4.32s/it]
+
+25.0%
+
+            author  mean_performance  count      month  corpus_return
+254  CD Equisearch          0.019273      3 2021-12-01      -0.005484
+255      Edelweiss         -0.012983      7 2021-12-01      -0.005484
+256        Ventura          0.007963      2 2021-12-01      -0.005484
+Year 2018 - Average Monthly Corpus Return: -2.1147%
+Year 2019 - Average Monthly Corpus Return: -0.8472%
+Year 2020 - Average Monthly Corpus Return: -2.4393%
+Year 2021 - Average Monthly Corpus Return: -2.4469%
+Year 2022 - Average Monthly Corpus Return: -1.3815%
+ /n
+overall : -1.873580420044778
+Testing K percentages: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:22<00:00,  5.57s/it]
+
+(base) C:\Users\disch\Desktop\CiteSert\Project_1\Version7_40krows_n1_3metrics_v4>

@@ -71,7 +71,7 @@ def calculate_monthly_performance(df, best_authors_df, target_month):
         
     daily_df = pd.DataFrame(daily_results)
     corpus_return = (corpus_value - initial_corpus) / initial_corpus
-    
+    # print(f"corpus_return for {month_start}: {corpus_return*100}%")
     # Combine both metrics in the summary
     performance_summary = pd.DataFrame({
         'author': month_df['author'].unique(),
@@ -80,7 +80,7 @@ def calculate_monthly_performance(df, best_authors_df, target_month):
         'month': [month_start] * len(month_df['author'].unique()),
         'corpus_return': [corpus_return] * len(month_df['author'].unique())
     })
-    
+    # print(f"performance_summary{performance_summary}")
     return performance_summary
 
 def run_rolling_analysis(df_train, df_test, start_date, end_date, k_percent, lookback_period=12):
@@ -148,24 +148,113 @@ def main(df_train, df_test):
                  (pd.to_datetime(end_date).month - pd.to_datetime(start_date).month) + 1
     
     k_percentages = np.arange(1, 25.5, 0.5)
+    # k_percentages = [5.0, 10.0, 15.0, 25.0]
     iteration_results = []
     
     for k in tqdm(k_percentages, desc="Testing K percentages"):
+        # print(f"\n{k}%\n")
         results_df = run_rolling_analysis(df_train, df_test, start_date, end_date, k, lookback_period=14)
-        
-        if not results_df.empty:
-            # Original metrics
-            metrics = {
-                'mean_of_mean_performance': results_df['mean_performance'].mean(),
-                'number_of_monthly_predictions': results_df['count'].sum()/num_months,
-            }
-            metrics['combined_metric'] = (metrics['mean_of_mean_performance'] - 0.0004) * \
-                                        metrics['number_of_monthly_predictions']
+
+        if results_df.empty:
+            iteration_results.append({
+                'mean_of_mean_performance': np.nan,
+                'number_of_monthly_predictions': 0,
+                'combined_metric': np.nan,
+                'mean_monthly_corpus_return': np.nan,
+                'k_percent': k
+            })
+            continue
+
+        # if not results_df.empty:
+        #     # Original metrics
+        #     metrics = {
+        #         'mean_of_mean_performance': results_df['mean_performance'].mean(),
+        #         'number_of_monthly_predictions': results_df['count'].sum()/num_months,
+        #     }
+        #     metrics['combined_metric'] = (metrics['mean_of_mean_performance'] - 0.0004) * \
+        #                                 metrics['number_of_monthly_predictions']
             
-            # New corpus return metric
-            metrics['mean_monthly_corpus_return'] = (results_df['corpus_return'].sum()/num_months) * 100
-            metrics['k_percent'] = k
-            iteration_results.append(metrics)
+        # ————————————————————————————————————————————————
+        # 1) Original Code 1 metrics
+        # ————————————————————————————————————————————————
+        mean_of_mean_perf = results_df['mean_performance'].mean()
+        number_of_monthly_preds = results_df['count'].sum() / num_months
+        combined_metric_val = (mean_of_mean_perf - 0.0004) * number_of_monthly_preds
+            
+        # ————————————————————————————————————————————————
+        # 2) Convert/Ensure 'month' is datetime & add 'year'
+        # ————————————————————————————————————————————————
+        results_df['month'] = pd.to_datetime(results_df['month'])
+        results_df['year'] = results_df['month'].dt.year
+        
+        # ————————————————————————————————————————————————
+        # 3) One monthly corpus_return per calendar month
+        #    by grouping or dropping duplicates
+        # ————————————————————————————————————————————————
+        # Option A: If each (month, author) has the same corpus_return,
+        #           just drop duplicates to keep unique monthly values:
+        # monthly_unique = results_df.drop_duplicates(subset=['month'])
+
+        # Option B: If different authors (in the same month) might have
+        #           slightly different 'corpus_return' fields, group by month:
+        monthly_unique = (
+            results_df.groupby('month', as_index=False)['corpus_return'].mean()
+        )
+
+        # ————————————————————————————————————————————————
+        # 4) Compute Yearly Averages & Print
+        # ————————————————————————————————————————————————
+        # Merge monthly_unique back with the year info if needed:
+        monthly_unique['year'] = monthly_unique['month'].dt.year
+        
+        years_in_data = sorted(monthly_unique['year'].unique())
+        for year in years_in_data:
+            year_data = monthly_unique[monthly_unique['year'] == year]
+            avg_year_corpus_return = year_data['corpus_return'].mean() * 100.0
+            # print(f"Year {year} - Average Monthly Corpus Return: {avg_year_corpus_return:.4f}%")
+            
+
+        # ————————————————————————————————————————————————
+        # 5) Overall Average (2018–2022)
+        # ————————————————————————————————————————————————
+        overall_corpus_return = monthly_unique['corpus_return'].mean() * 100.0
+        # print("OVERALL SUMMARY (2018–2022)")
+        # print(f"Average Monthly Corpus Return: {overall_corpus_return:.4f}%")
+        # print("="*40)
+
+        # ————————————————————————————————————————————————
+        # 6) Store Final Values for This k
+        # ————————————————————————————————————————————————
+        iteration_results.append({
+            'mean_of_mean_performance': mean_of_mean_perf,
+            'number_of_monthly_predictions': number_of_monthly_preds,
+            'combined_metric': combined_metric_val,
+            'mean_monthly_corpus_return': overall_corpus_return,
+            'k_percent': k
+        })
+
+            # # New corpus return 
+            # filter_2021_12 = results_df[results_df['month'] == pd.to_datetime("2021-12-01")]
+            # print(filter_2021_12)            
+            # results_df['month'] = pd.to_datetime(results_df['month'])
+            
+            # # Extract the "year" from each monthly row
+            # results_df['year'] = results_df['month'].dt.year
+
+            # # Print year-end summary for corpus return
+            # years_in_data = sorted(results_df['year'].unique())
+            
+            # for year in years_in_data:
+            #     year_data = results_df[results_df['year'] == year]
+            #     # print(f"year_data{year_data}")
+            #     avg_year_corpus_return = (year_data['corpus_return'].unique().mean()) * 100
+            #     print(f"Year {year} - Average Monthly Corpus Return: {avg_year_corpus_return:.4f}%")
+                
+            # metrics['mean_monthly_corpus_return'] = results_df['corpus_return'].mean().unique() * 100
+            # print(" /n")
+            # print(f"overall : {metrics['mean_monthly_corpus_return']}")
+            # metrics['k_percent'] = k
+            # iteration_results.append(metrics)
     
     results_df = pd.DataFrame(iteration_results)
     results_df.to_csv("./input_data/k_percent_performance_results.csv")
