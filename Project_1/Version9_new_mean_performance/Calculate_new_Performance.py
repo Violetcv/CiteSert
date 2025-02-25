@@ -127,7 +127,7 @@ def run_rolling_analysis(df_train, df_test, start_date, end_date, k_percent, loo
 
     return pd.concat(monthly_results, ignore_index=True)
 
-def plot_performance_metrics(final_df,lookback_period):
+def plot_performance_metrics(final_df,df_train, df_test, lookback_period):
     """
     Plot four metrics vs. k_percent, each metric in its own subplot.
     The columns are:
@@ -181,7 +181,7 @@ def plot_performance_metrics(final_df,lookback_period):
     plt.close()
 
 
-def main(df_train, df_test):
+def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages):
     """
     Main analysis:
     1) Run a rolling analysis for k in [1, 25.0 in 0.5 increments].
@@ -197,18 +197,12 @@ def main(df_train, df_test):
     df_test['date'] = pd.to_datetime(df_test['date'])
 
     # Date boundaries
-    start_date = '2018-01-01'
-    end_date   = '2022-12-31'
-    lookback_period = 9
+    
 
     num_months = (
         (pd.to_datetime(end_date).year - pd.to_datetime(start_date).year)*12
         + (pd.to_datetime(end_date).month - pd.to_datetime(start_date).month) + 1
     )
-
-    # k_percent values
-    k_percentages = np.arange(1, 25.5, 0.5)
-    # k_percentages = [15.5]
 
     # Container for final aggregated results
     iteration_results = []
@@ -252,7 +246,7 @@ def main(df_train, df_test):
     print(f"Results saved to 'k_percent_performance_results_{lookback_period}.csv'")
 
     # Plot
-    plot_performance_metrics(final_results_df,lookback_period)
+    plot_performance_metrics(final_results_df,df_train, df_test, lookback_period)
     print(f"Plot saved as 'performance_metrics_{lookback_period}.png'")
 
     return final_results_df
@@ -264,7 +258,13 @@ if __name__ == "__main__":
     # Read data
     df_d5 = pd.read_csv(file_path_d5).dropna(subset=['expected_return', 'actual_return'])
     df_d1 = pd.read_csv(file_path_d1).dropna(subset=['expected_return', 'actual_return'])
+    start_date = "2018-01-01"
+    end_date = "2022-12-31"
+    lookback_period = 3
 
-    # Example usage: pass df_d1 as both train and test
-    results_df = main(df_d1, df_d1)
+    # k_percent values
+    k_percentages = np.arange(1, 25.5, 0.5)
+    # k_percentages = [15.5]
+
+    results_df = main(df_d1, df_d1, start_date, end_date, lookback_period, k_percentages)
     print("\nSample of final results:\n", results_df.head()) 
