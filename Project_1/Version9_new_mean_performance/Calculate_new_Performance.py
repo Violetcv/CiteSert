@@ -260,11 +260,12 @@ if __name__ == "__main__":
     df_d1 = pd.read_csv(file_path_d1).dropna(subset=['expected_return', 'actual_return'])
     start_date = "2018-01-01"
     end_date = "2022-12-31"
-    lookback_period = 3
+    lookback_period_range = [3, 6, 9, 12, 15, 18, 21, 24]
 
     # k_percent values
-    k_percentages = np.arange(1, 25.5, 0.5)
+    k_percentages = np.arange(1, 50.5, 0.5)
     # k_percentages = [15.5]
 
-    results_df = main(df_d1, df_d1, start_date, end_date, lookback_period, k_percentages)
-    print("\nSample of final results:\n", results_df.head()) 
+    for i in lookback_period_range:
+        results_df = main(df_d5, df_d5, start_date, end_date, i, k_percentages)
+        print(f"\nSample of final results for {i}:\n", results_df.head()) 
