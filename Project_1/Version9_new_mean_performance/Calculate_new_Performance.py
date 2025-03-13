@@ -147,7 +147,7 @@ def plot_performance_metrics(final_df,df_train, df_test, lookback_period):
     # 1) Mean of Mean Performance
     plt.subplot(2, 2, 1)
     plt.plot(final_df['k_percent'], final_df['mean_of_mean_performance'], marker='o', color='blue')
-    plt.title('Mean of Mean Performance vs. K%')
+    plt.title(f'Mean of Mean Performance vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
     plt.ylabel('Mean of Mean Performance')
     plt.grid(True)
@@ -155,7 +155,7 @@ def plot_performance_metrics(final_df,df_train, df_test, lookback_period):
     # 2) Number of Monthly Predictions
     plt.subplot(2, 2, 2)
     plt.plot(final_df['k_percent'], final_df['number_of_monthly_predictions'], marker='o', color='orange')
-    plt.title('Monthly Predictions vs. K%')
+    plt.title(f'Monthly Predictions vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
     plt.ylabel('Avg # Predictions per Month')
     plt.grid(True)
@@ -163,7 +163,7 @@ def plot_performance_metrics(final_df,df_train, df_test, lookback_period):
     # 3) Combined Metric
     plt.subplot(2, 2, 3)
     plt.plot(final_df['k_percent'], final_df['combined_metric'], marker='o', color='green')
-    plt.title('Combined Metric vs. K%')
+    plt.title(f'Combined Metric vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
     plt.ylabel('Combined Metric')
     plt.grid(True)
@@ -171,7 +171,7 @@ def plot_performance_metrics(final_df,df_train, df_test, lookback_period):
     # 4) Monthly Corpus Return
     plt.subplot(2, 2, 4)
     plt.plot(final_df['k_percent'], final_df['mean_monthly_corpus_return'], marker='o', color='red')
-    plt.title('Average Monthly Corpus Return (%) vs. K%')
+    plt.title(f'Average Monthly Corpus Return (%) vs. K%  for {lookback_period}')
     plt.xlabel('K Percent')
     plt.ylabel('Corpus Return (%)')
     plt.grid(True)
@@ -260,12 +260,14 @@ if __name__ == "__main__":
     df_d1 = pd.read_csv(file_path_d1).dropna(subset=['expected_return', 'actual_return'])
     start_date = "2018-01-01"
     end_date = "2022-12-31"
-    lookback_period_range = [3, 6, 9, 12, 15, 18, 21, 24]
+    lookback_period_range = np.arange(24, 25, 1)
+    # lookback_period_range = 24
 
     # k_percent values
     k_percentages = np.arange(1, 50.5, 0.5)
     # k_percentages = [15.5]
 
     for i in lookback_period_range:
+        print(f"Running for lookback = {i}")
         results_df = main(df_d5, df_d5, start_date, end_date, i, k_percentages)
         print(f"\nSample of final results for {i}:\n", results_df.head()) 
