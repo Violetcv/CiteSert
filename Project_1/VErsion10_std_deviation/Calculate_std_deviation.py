@@ -73,7 +73,7 @@ def calculate_monthly_performance(df, best_authors_df, target_month, cost_per_tr
 
         # Adjust corpus for available fundc
         available_corpus = corpus_value - total_allocated
-        
+
         if available_corpus < 0:
             # This can happen if you over-allocate in prior days.
             available_corpus = 0.0
@@ -90,6 +90,7 @@ def calculate_monthly_performance(df, best_authors_df, target_month, cost_per_tr
 
         for _, trade in day_data.iterrows():
             signed_direction = np.sign(trade['expected_return'])
+
             # Calculate trade result: note the cost subtraction per trade.
             trade_return = (signed_direction * trade['actual_return'] - cost_per_trade)
             
@@ -170,23 +171,33 @@ def run_rolling_analysis(df_train, df_test, start_date, end_date, k_percent, loo
 
 def plot_performance_metrics(final_df, lookback_period, output_dir):
     """
-    Plot four metrics vs. k_percent, each metric in its own subplot.
-    The columns are:
-    • mean_of_mean_performance
-    • number_of_monthly_predictions
-    • combined_metric
-    • mean_monthly_corpus_return
-    Saved as performance_metrics.png.
+    Given final_df that contains, for each k_percent, aggregated results including:
+    - mean_of_mean_performance,
+    - number_of_monthly_predictions,
+    - combined_metric,
+    - mean_monthly_corpus_return,
+    - std_monthly_corpus_return,
+    - max_monthly_corpus_return,
+    - min_monthly_corpus_return
+
+    Plot six subplots:
+    1. Mean of mean performance vs. k%
+    2. Number of monthly predictions vs. k%
+    3. Combined metric vs. k%
+    4. Mean monthly corpus return (%) vs. k%
+    5. Std monthly corpus return (%) vs. k%
+    6. Ratio (mean/std) vs. k%
+    7. Max/Min monthly corpus return (%) vs. k%
     """
 
     # Sort by k_percent to ensure ascending order in the plots
     final_df = final_df.sort_values('k_percent').reset_index(drop=True)
 
     # Prepare the figure
-    plt.figure(figsize=(18, 12))
+    plt.figure(figsize=(18, 18))
 
     # 1) Mean of Mean Performance
-    plt.subplot(2, 2, 1)
+    plt.subplot(3, 3, 1)
     plt.plot(final_df['k_percent'], final_df['mean_of_mean_performance'], marker='o', color='blue')
     plt.title(f'Mean of Mean Performance vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
@@ -194,7 +205,7 @@ def plot_performance_metrics(final_df, lookback_period, output_dir):
     plt.grid(True)
 
     # 2) Number of Monthly Predictions
-    plt.subplot(2, 2, 2)
+    plt.subplot(3, 3, 2)
     plt.plot(final_df['k_percent'], final_df['number_of_monthly_predictions'], marker='o', color='orange')
     plt.title(f'Monthly Predictions vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
@@ -202,36 +213,78 @@ def plot_performance_metrics(final_df, lookback_period, output_dir):
     plt.grid(True)
 
     # 3) Combined Metric
-    plt.subplot(2, 2, 3)
+    plt.subplot(3, 3, 3)
     plt.plot(final_df['k_percent'], final_df['combined_metric'], marker='o', color='green')
     plt.title(f'Combined Metric vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
     plt.ylabel('Combined Metric')
     plt.grid(True)
 
-    # 4) Monthly Corpus Return
-    plt.subplot(2, 2, 4)
-    plt.plot(final_df['k_percent'], final_df['mean_monthly_corpus_return'], marker='o', color='red')
-    plt.title(f'Average Monthly Corpus Return (%) vs. K%  for {lookback_period}')
+    # 4) Mean Monthly Corpus Return
+    plt.subplot(3, 3, 4)
+    plt.plot(final_df['k_percent'], final_df['mean_monthly_corpus_return'] * 100, marker='o', color='red')
+    # plt.plot(final_df['k_percent'], final_df['median_monthly_corpus_return'] * 100, marker='o', color='blue', label='Median')
+    # plt.plot(final_df['k_percent'], final_df['mode_monthly_corpus_return'] * 100, marker='o', color='green', label='Mode')
+    # plt.title(f'Mean, Median & Mode Monthly Corpus Return (%) vs. K% (Lookback={lookback_period})')
+    plt.title(f'Mean Monthly Corpus Return (%) vs. K% for {lookback_period}')
+    plt.xlabel('K Percent')
+    plt.ylabel('Average Corpus Return (%)')
+    plt.grid(True)
+
+    plt.subplot(3, 3, 5)
+    plt.plot(final_df['k_percent'], final_df['median_monthly_corpus_return'] * 100, marker='o', color='blue', label='Median')
+    plt.title(f'Median Monthly Corpus Return (%) vs. K% (Lookback={lookback_period})')
+    # plt.title(f'Mean Monthly Corpus Return (%) vs. K% for {lookback_period}')
+    plt.xlabel('K Percent')
+    plt.ylabel('Average Corpus Return (%)')
+    plt.grid(True)
+
+    plt.subplot(3, 3, 6)
+    plt.plot(final_df['k_percent'], final_df['mode_monthly_corpus_return'] * 100, marker='o', color='green', label='Mode')
+    plt.title(f'Mode Monthly Corpus Return (%) vs. K% (Lookback={lookback_period})')
+    plt.xlabel('K Percent')
+    plt.ylabel('Average Corpus Return (%)')
+    plt.grid(True)
+
+    # 5) Std Monthly Corpus Return
+    plt.subplot(3, 3, 7)
+    plt.plot(final_df['k_percent'], final_df['std_monthly_corpus_return'] * 100, marker='o', color='purple')
+    plt.title(f'STD of Monthly Corpus Return (%) vs. K% for {lookback_period}')
+    plt.xlabel('K Percent')
+    plt.ylabel('STD Corpus Return (%)')
+    plt.grid(True)
+
+    # 6) Mean/Std Ratio
+    plt.subplot(3, 3, 8)
+    ratio = final_df.apply(lambda r: (r['mean_monthly_corpus_return'] / r['std_monthly_corpus_return']) * 100 if r['std_monthly_corpus_return'] != 0 else np.nan, axis=1)
+    plt.plot(final_df['k_percent'], ratio, marker='o', color='brown')
+    plt.title(f'Mean/STD Ratio vs. K% for {lookback_period}')
+    plt.xlabel('K Percent')
+    plt.ylabel('Mean/STD Ratio')
+    plt.grid(True)
+
+    # 7) Max/Min Monthly Corpus Return
+    plt.subplot(3, 3, 9)
+    plt.plot(final_df['k_percent'], final_df['max_monthly_corpus_return'] * 100, marker='o', linestyle='-', color='green', label='Max')
+    plt.plot(final_df['k_percent'], final_df['min_monthly_corpus_return'] * 100, marker='o', linestyle='-', color='blue', label='Min')
+    plt.title(f'Max/Min Monthly Corpus Return (%) vs. K% for {lookback_period}')
     plt.xlabel('K Percent')
     plt.ylabel('Corpus Return (%)')
     plt.grid(True)
+    plt.legend()
 
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, f'performance_metrics_{lookback_period}.png'))
     plt.close()
 
-
 def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages, cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset, output_dir):
     """
-    Main analysis:
-    1) Run a rolling analysis for k in [1, 25.0 in 0.5 increments].
-    2) Aggregate the results into 4 final metrics:
-    (a) mean_of_mean_performance
-    (b) number_of_monthly_predictions
-    (c) combined_metric
-    (d) mean_monthly_corpus_return
-    3) Save final to CSV and plot performance_metrics.png
+    For each k in k_percentages:
+    - Run rolling analysis.
+    - Aggregate monthly metrics across the period.
+    - Compute mean and standard deviation of monthly corpus returns.
+
+    Save the aggregated final results to CSV and produce performance plots.
     """
     # Convert dates if needed
     df_train['date'] = pd.to_datetime(df_train['date'])
@@ -266,6 +319,11 @@ def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages, c
                 'number_of_monthly_predictions': 0,
                 'combined_metric': np.nan,
                 'mean_monthly_corpus_return': np.nan,
+                'std_monthly_corpus_return': np.nan,
+                'min_monthly_corpus_return': np.nan,
+                'max_monthly_corpus_return': np.nan,
+                'median_monthly_corpus_return': np.nan,
+                'mode_monthly_corpus_return': np.nan,
                 'k_percent': k
             })
             continue
@@ -274,7 +332,17 @@ def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages, c
         overall_mean_perf = monthly_df['mean_performance'].mean()
         overall_count = monthly_df['count'].sum()
         overall_combined = monthly_df['combined_metric'].mean()
-        overall_corpus_return = monthly_df['corpus_return'].mean() * 100.0  # percent
+
+        # Compute mean and std (as a fraction) over the months for corpus_return:
+        mean_corpus_return = monthly_df['corpus_return'].mean()
+        std_corpus_return  = monthly_df['corpus_return'].std()
+        min_corpus_return = monthly_df['corpus_return'].min() if not monthly_df['corpus_return'].empty else np.nan
+        max_corpus_return = monthly_df['corpus_return'].max() if not monthly_df['corpus_return'].empty else np.nan
+
+        # NEW: Compute the median and mode.
+        median_corpus_return = monthly_df['corpus_return'].median()
+        mode_series = monthly_df['corpus_return'].mode()
+        mode_corpus_return = mode_series.iloc[0] if not mode_series.empty else np.nan
         
         # Total number of predictions = total trades over months / total months
         monthly_predictions = overall_count / num_months
@@ -283,7 +351,12 @@ def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages, c
             'mean_of_mean_performance': overall_mean_perf,
             'number_of_monthly_predictions': monthly_predictions,
             'combined_metric': overall_combined,
-            'mean_monthly_corpus_return': overall_corpus_return,
+            'mean_monthly_corpus_return': mean_corpus_return,
+            'std_monthly_corpus_return': std_corpus_return,
+            'min_monthly_corpus_return': min_corpus_return,
+            'max_monthly_corpus_return': max_corpus_return,
+            'median_monthly_corpus_return': median_corpus_return,
+            'mode_monthly_corpus_return': mode_corpus_return,
             'k_percent': k
         })
 
@@ -313,18 +386,23 @@ if __name__ == "__main__":
     # lookback_period_range = 24
 
     # k_percent values
-    k_percentages = np.arange(1, 50.5, 0.5)
+    k_percentages = np.arange(1, 10.5, 0.5)
     # k_percentages = [15.5]
 
     # Additional parameters
     corpus_fraction       = 0.8
     cost_per_trade        = 0.0021
-    max_allocation_fraction = 0.15
+    # max_allocation_fraction = 0.15
     day_offset            = 5
-    outdir                = "Output_2"
+    outdir                = "Output_max_allocation_grid"
 
-    for i in lookback_period_range:
-        print(f"Running for lookback = {i}")
-        print(f"Running for Max Allocation Fraction = {max_allocation_fraction}")
-        results_df = main(df_d5, df_d5, start_date, end_date, i, k_percentages, cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset, outdir)
-        print(f"\nSample of final results for {i}:\n", results_df.head()) 
+    # Set up a grid over max_allocation_fraction from 0.10 to 0.25 in steps of 0.01
+    max_alloc_values = np.arange(0.05, 0.5, 0.01)
+
+    # Loop over each lookback period and for each max allocation fraction value
+    for lookback in lookback_period_range:
+        for max_alloc in max_alloc_values:
+            print(f"\n==== Running analysis for lookback = {lookback} months, max_allocation_fraction = {max_alloc:.2f} ====")
+            results_df = main(df_d5, df_d5, start_date, end_date, lookback, k_percentages,
+                            cost_per_trade, corpus_fraction, max_alloc, day_offset, outdir)
+            print(f"Sample final results for lookback = {lookback}, max_alloc = {max_alloc:.2f}:\n", results_df.head())
