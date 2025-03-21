@@ -308,6 +308,11 @@ def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages, c
         + (pd.to_datetime(end_date).month - pd.to_datetime(start_date).month) + 1
     )
 
+    # Define a list of months (as Timestamps) to exclude from the test results.
+    # For example: July 2019 and June 2018.
+    excluded_months = [pd.Timestamp('2019-07-01'), pd.Timestamp('2018-06-01')]
+
+
     # Container for final aggregated results
     iteration_results = []
 
@@ -316,6 +321,10 @@ def main(df_train, df_test,start_date,end_date,lookback_period, k_percentages, c
     for k in tqdm(k_percentages, desc="Sweeping through K%"):
         monthly_df = run_rolling_analysis(df_train, df_test, start_date, end_date, k, lookback_period, cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset)
 
+        # Before aggregation, remove rows corresponding to the excluded months.
+        if not monthly_df.empty:
+            monthly_df = monthly_df[~monthly_df['month'].isin(excluded_months)]
+            
         # If no monthly data, store NaNs
         if monthly_df.empty:
             iteration_results.append({
@@ -401,7 +410,7 @@ if __name__ == "__main__":
     # lookback_period_range = 24
 
     # k_percent values
-    k_percentages = np.arange(1, 10.5, 0.5)
+    k_percentages = np.arange(1, 15.5, 0.5)
     # k_percentages = [15.5]
 
     # Additional parameters
@@ -409,11 +418,11 @@ if __name__ == "__main__":
     cost_per_trade        = 0.0021
     # max_allocation_fraction = 0.15
     day_offset            = 5
-    outdir                = "Output_max_allocation_grid"
+    outdir                = "Output_min_max_rm_m=19"
 
     # Set up a grid over max_allocation_fraction from 0.10 to 0.25 in steps of 0.01
-    # max_alloc_values = np.arange(0.05, 0.5, 0.01)
-    max_alloc_values = np.arange(0.10, 0.15, 0.01)
+    max_alloc_values = np.arange(0.05, 0.5, 0.01)
+    # max_alloc_values = np.arange(0.10, 0.15, 0.01)
 
 
     # Loop over each lookback period and for each max allocation fraction value
