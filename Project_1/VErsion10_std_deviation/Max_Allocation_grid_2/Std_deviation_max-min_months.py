@@ -397,7 +397,7 @@ if __name__ == "__main__":
 
     start_date = "2018-01-01"
     end_date = "2022-12-31"
-    lookback_period_range = np.arange(19, 25, 1)
+    lookback_period_range = np.arange(16, 25, 1)
     # lookback_period_range = 24
 
     # k_percent values
