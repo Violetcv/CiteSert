@@ -53,7 +53,7 @@ def get_top_n_global_max(folder_path, top_n=5):
 
 if __name__ == "__main__":
     # Set the folder path where your CSV files are located.
-    folder_path = r"C:\Users\disch\Desktop\CiteSert\Project_1\VErsion10_std_deviation\Max_Allocation_grid_2\Output_max_allocation_grid"
+    folder_path = r"C:\Users\disch\Desktop\CiteSert\Project_1\VErsion10_std_deviation\Max_Allocation_grid_2\Output_min_max_rm_m=19"
     
     # Set the number of top rows to display (global top n)
     top_n = 5
