@@ -1,0 +1,211 @@
+date,Company Name,Symbol,author,Sector,expected_return,actual_return
+2019-02-12,reliance industries limited,RELIANCE,Emkay,Finance,54.06767458603311,-0.016841604314835
+2018-08-17,reliance industries limited,RELIANCE,Emkay,Finance,52.22222222222223,0.05095887434128318
+2024-07-19,reliance industries limited,RELIANCE,KRChoksey,Finance,15.505957812948134,-0.02702878516832002
+2024-06-27,reliance industries limited,RELIANCE,Sharekhan,Finance,15.196816378892796,0.022305318332489582
+2024-05-29,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,16.807086669181643,0.05212469522814354
+2024-05-24,reliance industries limited,RELIANCE,Keynote Capitals Ltd,Finance,18.951224214382105,-0.026651353679339167
+2024-05-24,reliance industries limited,RELIANCE,Axis Direct,Finance,16.22462750282299,-0.026651353679339167
+2024-05-23,reliance industries limited,RELIANCE,Motilal Oswal,Finance,16.955868288017488,-0.01848512932850279
+2024-03-22,reliance industries limited,RELIANCE,Anand Rathi,Finance,19.950976557406968,0.028269896193771564
+2024-02-13,reliance industries limited,RELIANCE,Axis Direct,Finance,22.68684183621307,0.002109777015437424
+2024-02-12,reliance industries limited,RELIANCE,Keynote Capitals Ltd,Finance,29.163055135230437,0.010374441772586677
+2024-02-05,reliance industries limited,RELIANCE,Axis Direct,Finance,14.261338533493815,0.005739154558379923
+2024-02-01,reliance industries limited,RELIANCE,Keynote Capitals Ltd,Finance,20.282016328804065,-0.0037504142899506343
+2023-11-10,reliance industries limited,RELIANCE,Axis Direct,Finance,10.91976622777876,0.016272762495156797
+2023-10-09,reliance industries limited,RELIANCE,Motilal Oswal,Finance,33.22231473771857,0.018577529210292387
+2023-09-27,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,15.80273004936091,-0.02721359630717579
+2023-08-11,reliance industries limited,RELIANCE,Axis Direct,Finance,3.8691249026226955,-0.00039385584875935406
+2023-08-10,reliance industries limited,RELIANCE,Sharekhan,Finance,19.89768730683151,0.016861142372011403
+2023-06-14,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,12.531567721759155,0.0
+2023-05-22,reliance industries limited,RELIANCE,Axis Direct,Finance,14.525097572369308,-0.008414128338572757
+2023-05-03,reliance industries limited,RELIANCE,Motilal Oswal,Finance,29.900458300493337,0.02096012028352552
+2023-04-28,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,33.845472004727434,0.004842991892769254
+2023-02-15,reliance industries limited,RELIANCE,Motilal Oswal,Finance,37.73442880251126,-0.014308840961766583
+2023-02-15,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,44.140681304953645,-0.014308840961766583
+2022-11-22,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,14.064508503124948,0.016543808273587198
+2022-11-11,reliance industries limited,RELIANCE,Axis Direct,Finance,11.500895209537262,-0.014595293594379354
+2022-11-09,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,24.481327800829874,0.011214898538842177
+2022-08-10,reliance industries limited,RELIANCE,Axis Direct,Finance,6.822933357750009,0.018516977017139436
+2022-08-09,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,5.907308214683582,0.018516977017139436
+2022-08-05,reliance industries limited,RELIANCE,ICICI Direct,Finance,14.319169260160841,0.023744601067586628
+2022-08-04,reliance industries limited,RELIANCE,Motilal Oswal,Finance,11.854065879887832,0.0025235000946312535
+2022-08-04,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,6.30758327427356,0.0025235000946312535
+2022-06-22,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,32.55809338598614,-0.008904147945842824
+2022-05-30,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,19.07198273456251,0.031386253542848463
+2022-05-24,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,32.25543794346866,-0.022729328563792502
+2022-05-23,reliance industries limited,RELIANCE,Axis Direct,Finance,19.540142948984602,-0.007634253987516039
+2022-05-20,reliance industries limited,RELIANCE,Sharekhan,Finance,26.335132651889285,-0.007406736465928511
+2022-05-19,reliance industries limited,RELIANCE,ICICI Direct,Finance,18.313239457746608,0.04113340002759757
+2022-05-19,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,15.339813241163332,0.04113340002759757
+2022-05-18,reliance industries limited,RELIANCE,Motilal Oswal,Finance,23.000768754804714,0.04947813305535325
+2022-02-08,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,17.847424779280775,0.0022160588877668565
+2022-02-04,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,32.23885275448634,0.017717783010357605
+2021-11-16,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,17.56178379124673,-0.05410291650227849
+2021-11-13,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,21.993535073141338,-0.05230852571047595
+2021-08-31,reliance industries limited,RELIANCE,Motilal Oswal,Finance,10.217323674503351,0.05081077989303993
+2021-08-09,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,15.853464464177724,0.013685870249624005
+2021-08-03,reliance industries limited,RELIANCE,Axis Direct,Finance,6.034664023309606,-0.002555441175709887
+2021-08-03,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,15.797062269081739,-0.002555441175709887
+2021-08-03,reliance industries limited,RELIANCE,Axis Direct,Finance,6.034664023309606,-0.002555441175709887
+2021-08-03,reliance industries limited,RELIANCE,Motilal Oswal,Finance,11.741912228530236,-0.002555441175709887
+2021-08-03,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,4.146666253754919,-0.002555441175709887
+2021-05-20,reliance industries limited,RELIANCE,Axis Direct,Finance,10.185382072645021,-0.014483688853596657
+2021-05-20,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,16.37122808374088,-0.014483688853596657
+2021-02-09,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,20.44943820224719,0.04496731011306994
+2021-02-08,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,13.438202247191011,0.04778339812687752
+2021-02-04,reliance industries limited,RELIANCE,Axis Direct,Finance,9.250788293289522,0.013522768097718654
+2021-02-04,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,26.348980770084836,0.013522768097718654
+2021-02-03,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,-5.675495214778544,0.01426922318889554
+2020-11-20,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,19.65214530951254,-0.001638188108420312
+2020-11-02,reliance industries limited,RELIANCE,Sharekhan,Finance,9.907363793374152,0.034388668191485096
+2020-10-30,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,15.601674858911352,-0.056143501592799246
+2020-10-29,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,13.781176042235582,-0.0900411312149692
+2020-10-29,reliance industries limited,RELIANCE,Axis Direct,Finance,5.646039431920854,-0.0900411312149692
+2020-10-29,reliance industries limited,RELIANCE,Dolat Capital,Finance,8.227250236156722,-0.0900411312149692
+2020-10-09,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,21.233113959127117,0.023491201706335757
+2020-10-05,reliance industries limited,RELIANCE,Axis Direct,Finance,6.706939664776809,0.006290441158570762
+2020-09-07,reliance industries limited,RELIANCE,Dolat Capital,Finance,23.280747027055785,0.1061152196880244
+2020-08-10,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,13.941018766756038,-0.005973345784147533
+2020-08-06,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,6.900422256667908,0.0018821853698240134
+2020-08-06,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,25.87340731607069,0.0018821853698240134
+2020-06-12,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,10.475475944856042,0.03217744671129604
+2020-06-09,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,-5.313831907521545,0.029614963349903153
+2020-06-08,reliance industries limited,RELIANCE,Sharekhan,Finance,10.38542912335571,-0.014484501722030974
+2020-06-08,reliance industries limited,RELIANCE,Motilal Oswal,Finance,15.158931877372991,-0.014484501722030974
+2020-02-26,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,13.041793165816168,-0.05176149839648869
+2020-02-19,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,-0.4507279743182363,-0.05384435547502853
+2020-02-13,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,-2.1714580711773683,-0.006670615236544007
+2020-02-13,reliance industries limited,RELIANCE,Motilal Oswal,Finance,16.155260865356684,-0.006670615236544007
+2019-11-21,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,-3.0714406923468522,0.011773133142788182
+2019-11-05,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,7.405803378085745,0.0019407024433141839
+2019-10-24,reliance industries limited,RELIANCE,Sharekhan,Finance,5.005250262513126,0.018009471479311336
+2019-09-13,reliance industries limited,RELIANCE,Motilal Oswal,Finance,13.576210493538854,0.014046029030299667
+2019-08-05,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,10.59694585839889,0.015507835842473684
+2019-07-29,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,16.917464660282718,-0.027758007117437672
+2019-07-27,reliance industries limited,RELIANCE,Motilal Oswal,Finance,15.609577773715952,-0.04162135442412274
+2019-07-26,reliance industries limited,RELIANCE,Sharekhan,Finance,16.735066119471046,-0.04162135442412274
+2019-07-26,reliance industries limited,RELIANCE,Prabhudas Lilladhar,Finance,16.79766039115335,-0.04162135442412274
+2019-06-24,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,5.978376992436225,0.012119369271534725
+2019-06-03,reliance industries limited,RELIANCE,Axis Direct,Finance,11.73675875417914,-0.031341648135615144
+2019-05-21,reliance industries limited,RELIANCE,Sharekhan,Finance,14.285714285714285,-0.0065346196672545365
+2019-02-14,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,16.987001444283965,-0.011099252934898628
+2019-02-12,reliance industries limited,RELIANCE,Motilal Oswal,Finance,14.686098654708521,-0.016841604314835
+2018-12-06,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,7.644882860665844,-0.02823693460767518
+2018-10-29,reliance industries limited,RELIANCE,HDFC Securities,Finance,32.2268326417704,-0.02695186950257428
+2018-10-29,reliance industries limited,RELIANCE,Motilal Oswal,Finance,18.948824343015215,-0.02695186950257428
+2018-10-05,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,34.42857142857143,0.04962241549919286
+2018-08-08,reliance industries limited,RELIANCE,Dolat Capital,Finance,13.601036269430052,-0.027675805382948497
+2018-08-07,reliance industries limited,RELIANCE,HDFC Securities,Finance,16.883116883116884,0.016207036585816025
+2018-07-19,reliance industries limited,RELIANCE,Dolat Capital,Finance,14.756241014246502,-0.0022003496984342244
+2018-05-16,reliance industries limited,RELIANCE,HDFC Securities,Finance,8.990147783251231,-0.029196164939521433
+2018-05-16,reliance industries limited,RELIANCE,Motilal Oswal,Finance,17.980295566502463,-0.029196164939521433
+2018-05-16,reliance industries limited,RELIANCE,Emkay,Finance,22.906403940886698,-0.029196164939521433
+2018-03-22,reliance industries limited,RELIANCE,Sharekhan,Finance,14.564290067032298,0.01034016947071113
+2018-02-07,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,30.29395587606185,0.01959852858778537
+2018-02-06,reliance industries limited,RELIANCE,HDFC Securities,Finance,3.1630170316301705,-0.005210668540891712
+2018-02-06,reliance industries limited,RELIANCE,Motilal Oswal,Finance,20.194647201946474,-0.005210668540891712
+2017-11-02,reliance industries limited,RELIANCE,Axis Direct,Finance,19.672731713273908,-0.05151820241173372
+2017-10-28,reliance industries limited,RELIANCE,HDFC Securities,Finance,10.101479074086352,0.019859717326900825
+2017-10-27,reliance industries limited,RELIANCE,Motilal Oswal,Finance,18.06062213968296,0.019859717326900825
+2017-09-07,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,15.59212301052064,0.004574858286095299
+2017-08-21,reliance industries limited,RELIANCE,Axis Direct,Finance,30.911033930002667,-0.0025185411941502298
+2017-08-14,reliance industries limited,RELIANCE,HDFC Securities,Finance,32.49651324965133,0.0021567617960956604
+2017-07-27,reliance industries limited,RELIANCE,Axis Direct,Finance,28.272251308900525,0.007752897026681494
+2017-05-25,reliance industries limited,RELIANCE,Axis Direct,Finance,20.86082506012209,0.04249144467556874
+2017-05-19,reliance industries limited,RELIANCE,Yes Securities,Finance,16.480793060718714,-0.02171726332800152
+2017-05-17,reliance industries limited,RELIANCE,HDFC Securities,Finance,12.672715412441443,-0.012012012012012034
+2017-05-17,reliance industries limited,RELIANCE,Dolat Capital,Finance,20.98765432098765,-0.012012012012012034
+2017-04-29,reliance industries limited,RELIANCE,Ashika Research,Finance,18.28328155563226,-0.03142210780872158
+2017-03-30,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,18.249142031428736,0.1176978765312646
+2017-02-20,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,12.22857142857143,0.1000101719051979
+2017-02-17,reliance industries limited,RELIANCE,HDFC Securities,Finance,6.2717770034843205,0.1279269339217849
+2016-10-28,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,-1.8767377201112192,-0.02600807290582997
+2016-08-04,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,-5.167958656330749,0.03276712328767121
+2016-07-29,reliance industries limited,RELIANCE,HDFC Securities,Finance,10.299003322259136,-0.023635582294800173
+2016-07-28,reliance industries limited,RELIANCE,Motilal Oswal,Finance,14.116094986807386,-0.010936899218182606
+2016-07-28,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,10.29023746701847,-0.010936899218182606
+2024-07-26,reliance industries limited,RELIANCE,Sharekhan,Finance,16.8141592920354,0.0007936770395846724
+2024-05-24,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,13.207547169811315,-0.026651353679339167
+2024-05-18,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,6.064726679358175,0.042403198653198686
+2024-03-07,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,11.772390767890844,-0.03816319677636
+2024-02-05,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,-1.4778325123152638,0.005739154558379923
+2023-11-01,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,12.416107382550337,0.010825644460770624
+2023-08-24,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,15.183246073298436,-0.01451547231270362
+2023-08-10,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,-5.966277561608294,0.016861142372011403
+2023-08-10,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,6.231171713968599,0.016861142372011403
+2023-08-10,reliance industries limited,RELIANCE,Sharekhan,Finance,16.731517509727638,0.016861142372011403
+2023-06-01,reliance industries limited,RELIANCE,ICICI Direct,Finance,22.84525460669705,0.0033804965953883347
+2023-05-31,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,7.548297151961755,-0.0011707248883879103
+2023-05-31,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,9.539932284405491,-0.0011707248883879103
+2023-02-06,reliance industries limited,RELIANCE,ICICI Direct,Finance,27.388535031847137,0.01904891329815654
+2023-02-06,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,11.765901239585446,0.01904891329815654
+2022-12-14,reliance industries limited,RELIANCE,ICICI Direct,Finance,14.899925871015562,-0.0012322499802257332
+2022-12-12,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,5.38417321325925,-0.013296626297219073
+2022-11-01,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,12.156862745098039,0.02387359828178555
+2022-10-31,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,8.695652173913043,-0.017251437619801687
+2022-10-28,reliance industries limited,RELIANCE,ICICI Direct,Finance,12.648221343873518,0.001829159098467584
+2022-09-19,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,6.269925611052073,-0.01441015024353357
+2022-08-03,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,12.951167728237792,-0.01641739621341377
+2022-07-30,reliance industries limited,RELIANCE,LKP Securities,Finance,16.57481983891479,0.03461682371611528
+2022-07-29,reliance industries limited,RELIANCE,ICICI Direct,Finance,12.732095490716185,0.03461682371611528
+2022-07-29,reliance industries limited,RELIANCE,BOB Capital Markets Ltd.,Finance,10.521662245800183,0.03461682371611528
+2022-05-24,reliance industries limited,RELIANCE,Emkay,Finance,4.477611940298507,-0.022729328563792502
+2022-05-23,reliance industries limited,RELIANCE,Yes Securities,Finance,27.142547190279892,-0.007634253987516039
+2022-05-23,reliance industries limited,RELIANCE,ICICI Direct,Finance,13.763105063573496,-0.007634253987516039
+2022-05-21,reliance industries limited,RELIANCE,Sharekhan,Finance,21.50141028422652,-0.007406736465928511
+2022-02-23,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,10.69182389937107,0.023666163731310266
+2022-02-16,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,15.357227628768097,-0.008344711807498543
+2021-10-29,reliance industries limited,RELIANCE,LKP Securities,Finance,35.76222435282838,-0.020760713553413943
+2021-08-03,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,25.480671928759353,-0.002555441175709887
+2021-07-03,reliance industries limited,RELIANCE,LKP Securities,Finance,37.23589842992829,-0.012353317038043819
+2021-05-31,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,14.033403724323293,0.02015285961524993
+2021-02-19,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,13.199487398547632,-0.00913617801483455
+2021-02-15,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,14.053823152498934,0.01370379616399936
+2020-11-09,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,8.233924934535935,-0.04670147673272232
+2020-10-30,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,22.73524254821742,-0.056143501592799246
+2020-10-29,reliance industries limited,RELIANCE,Sharekhan,Finance,25.296912114014248,-0.0900411312149692
+2020-10-29,reliance industries limited,RELIANCE,Dolat Capital,Finance,8.187134502923977,-0.0900411312149692
+2020-07-23,reliance industries limited,RELIANCE,Dolat Capital,Finance,12.559241706161131,0.05816702026290715
+2020-07-16,reliance industries limited,RELIANCE,Sharekhan,Finance,23.427902895583514,0.06859354171927204
+2020-06-03,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,12.781954887218053,0.016518023170141387
+2020-06-02,reliance industries limited,RELIANCE,Sharekhan,Finance,16.87958684425116,0.02375826595513426
+2020-06-02,reliance industries limited,RELIANCE,Emkay,Finance,-10.90712742980561,0.02375826595513426
+2020-04-09,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,10.9417860408412,-0.02981440938944953
+2019-11-08,reliance industries limited,RELIANCE,HDFC Securities,Finance,2.8911564625850388,0.016430818805003813
+2019-07-26,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,4.860963701974098,-0.04162135442412274
+2019-07-26,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-2.3561876459350506,-0.04162135442412274
+2019-07-25,reliance industries limited,RELIANCE,Sharekhan,Finance,16.763969974979144,-0.04108348134991118
+2019-05-31,reliance industries limited,RELIANCE,HDFC Securities,Finance,3.135313531353133,-0.005726551043313706
+2019-05-30,reliance industries limited,RELIANCE,Sharekhan,Finance,7.754067187830126,0.010275568344382719
+2019-03-29,reliance industries limited,RELIANCE,Sharekhan,Finance,12.91779584462511,0.0037919913143441048
+2019-02-05,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,7.1428571428571495,-0.01430982112723594
+2019-02-04,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,25.86339217191098,-0.001244370703958307
+2019-02-03,reliance industries limited,RELIANCE,HDFC Securities,Finance,19.71830985915492,-0.001244370703958307
+2018-12-18,reliance industries limited,RELIANCE,SPA Research,Finance,13.761467889908257,-0.03617863199547766
+2018-10-29,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-5.80319596299411,-0.02695186950257428
+2018-10-29,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,11.017661900756941,-0.02695186950257428
+2018-10-29,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,9.896271376506872,-0.02695186950257428
+2018-10-27,reliance industries limited,RELIANCE,HDFC Securities,Finance,37.53581661891118,0.014586099812837906
+2018-08-02,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,4.736967388716966,0.007828061879851893
+2018-08-01,reliance industries limited,RELIANCE,HDFC Securities,Finance,17.142857142857142,0.000917911201270389
+2018-06-01,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,5.3639846743294965,0.02249718785151848
+2018-05-31,reliance industries limited,RELIANCE,HDFC Securities,Finance,14.869466515323495,0.03005266348862917
+2018-01-30,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,3.2059727711901678,-0.048053233865211493
+2017-10-27,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-11.566208983011402,0.019859717326900825
+2017-10-26,reliance industries limited,RELIANCE,HDFC Securities,Finance,15.830115830115837,-0.009635974304068528
+2017-10-26,reliance industries limited,RELIANCE,Sharekhan,Finance,9.555984555984562,-0.009635974304068528
+2017-08-04,reliance industries limited,RELIANCE,Geojit BNP Paribas,Finance,1.7321968655485322,-0.020096258261720595
+2017-08-02,reliance industries limited,RELIANCE,HDFC Securities,Finance,13.830079736046194,-0.006453868287304642
+2017-08-02,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-9.265878471267525,-0.006453868287304642
+2017-08-01,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-8.83977900552486,0.0075403510678768385
+2017-05-23,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-12.951727776312325,0.022802556295379254
+2017-05-22,reliance industries limited,RELIANCE,HDFC Securities,Finance,3.421661950090047,-0.017539228141963792
+2017-01-31,reliance industries limited,RELIANCE,HDFC Securities,Finance,19.483052913923427,-0.0118977919036467
+2016-11-21,reliance industries limited,RELIANCE,HDFC Securities,Finance,37.64705882352941,-0.010370305408783009
+2016-10-24,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,-4.148415356866793,-0.015301511666118938
+2016-07-29,reliance industries limited,RELIANCE,HDFC Securities,Finance,14.467607040319558,-0.023635582294800173
+2016-07-29,reliance industries limited,RELIANCE,Motilal Oswal,Finance,1.4230433154412654,-0.023635582294800173
+2016-07-28,reliance industries limited,RELIANCE,ICICI Securities Limited,Finance,2.2146507666098807,-0.010936899218182606
+2016-07-28,reliance industries limited,RELIANCE,Chola Wealth Direct,Finance,12.122901567242764,-0.010936899218182606
+2016-07-12,reliance industries limited,RELIANCE,Motilal Oswal,Finance,11.11111111111111,0.006963485224354764
