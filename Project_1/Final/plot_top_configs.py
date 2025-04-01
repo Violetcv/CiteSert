@@ -5,7 +5,7 @@ from calculate_metrics import run_rolling_analysis
 from Search import get_top_or_bottom_n_global
 from config import *  # Import all paths and parameters from config.py
 
-def plot_monthly_time_series(monthly_df,k , lookback_period, max_alloc, output_dir):
+def plot_monthly_time_series(df_train, df_test, k , lookback_period, max_alloc, output_dir):
     """
     Plots the monthly corpus return time series and overlays mean/median return.
     
@@ -15,6 +15,24 @@ def plot_monthly_time_series(monthly_df,k , lookback_period, max_alloc, output_d
       max_alloc: Maximum allocation value used in the configuration
       output_dir: Directory to save the plot
     """
+    # Regenerate the monthly results for this configuration
+    monthly_df = run_rolling_analysis(
+        df_train=df_train,
+        df_test=df_test,
+        start_date=start_date,  # Ensure these are imported from config
+        end_date=end_date,
+        k_percent=k,
+        lookback_period=lookback_period,
+        cost_per_trade=cost_per_trade,
+        corpus_fraction=corpus_fraction,
+        max_allocation_fraction=max_alloc,
+        day_offset=day_offset
+    )
+    
+    if monthly_df.empty or 'month' not in monthly_df.columns:
+        print(f"No data for config: k={k}, lookback={lookback_period}, alloc={max_alloc}")
+        return
+    
     import matplotlib.pyplot as plt
     monthly_df = monthly_df.copy()
     monthly_df['month'] = pd.to_datetime(monthly_df['month'])

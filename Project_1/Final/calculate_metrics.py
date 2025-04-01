@@ -29,6 +29,7 @@ def get_best_authors(df, start_date, end_date, k_percent):
     n_select = max(1, int(np.ceil(len(author_performance) * k_percent / 100)))
     return author_performance.nlargest(n_select, 'total_perf')[['author']]
 
+
 def calculate_monthly_performance(df, best_authors_df, target_month, cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset):
     """
     For a single month (target_month), restricted to best_authors_df:

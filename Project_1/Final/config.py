@@ -7,7 +7,7 @@ BASE_DIR = os.path.abspath(".")  # Adjust if needed
 data_dir = os.path.join(BASE_DIR, "data") # 3 files
 output_dir = os.path.join(BASE_DIR, "outputs") # store filtered_data, k percent analysis files and graphs
 
-N_DAYS_train = 2
+N_DAYS_train = 5
 N_DAYS_test = 3
 
 # Calculate Metrics

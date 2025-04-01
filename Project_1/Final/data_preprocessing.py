@@ -72,9 +72,10 @@ def preprocess_data(n_days):
         return re.sub(r'\n.*', '', author).strip()
 
     analyst_ratings.loc[:, 'author'] = analyst_ratings['author'].apply(clean_author_name)
+    print(stock_df.columns)
 
     # Drop unwanted columns from stock data.
-    stock_df = stock_df.drop(['Volume', 'Market capitalization as on March 28, 2024\n(In lakhs)'], axis=1)
+    stock_df = stock_df.drop(['Volume', 'Market capitalization as on March 28 2024(In lakhs)'], axis=1)
 
     # ====== Cleaning Price Information ======
     def clean_price_at_reco(price):
@@ -222,6 +223,7 @@ def preprocess_data(n_days):
     merged_df = pd.merge(analyst_ratings, unique_sector_df[['Symbol', 'Sector']], on='Symbol', how='inner')
     filtered_df = merged_df[['date', 'Company Name', 'Symbol', 'author', 'Sector', 'expected_return', 'actual_return']]
 
+    filtered_df['date'] = pd.to_datetime(filtered_df['date'])
     filtered_df = filtered_df.dropna()
 
     sector_group_details = filtered_df.groupby('Sector').agg({
@@ -236,7 +238,10 @@ def preprocess_data(n_days):
     print("\nSector Group Details:")
     print(sector_group_details)
 
-    
+    filtered_df['expected_return'] = pd.to_numeric(filtered_df['expected_return'], errors='coerce')
+    filtered_df['actual_return'] = pd.to_numeric(filtered_df['actual_return'], errors='coerce')
+
+
     # Optionally return DataFrames for further processing.
     return filtered_df
 
