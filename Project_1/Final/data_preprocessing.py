@@ -220,11 +220,10 @@ def preprocess_data(n_days):
     unique_companies_df['Sector'] = unique_companies_df['Description'].progress_apply(identify_sector)
     unique_sector_df = unique_companies_df[['Symbol', 'Company Name', 'Description', 'Sector']].copy()
 
-    merged_df = pd.merge(analyst_ratings, unique_sector_df[['Symbol', 'Sector']], on='Symbol', how='inner')
+    merged_df = pd.merge(analyst_ratings, unique_sector_df[['Symbol', 'Sector']], on='Symbol', how='left')
     filtered_df = merged_df[['date', 'Company Name', 'Symbol', 'author', 'Sector', 'expected_return', 'actual_return']]
 
     filtered_df['date'] = pd.to_datetime(filtered_df['date'])
-    filtered_df = filtered_df.dropna()
 
     sector_group_details = filtered_df.groupby('Sector').agg({
         'Company Name': lambda x: ', '.join(x.unique()),
@@ -232,22 +231,17 @@ def preprocess_data(n_days):
     }).reset_index()
     sector_group_details.rename(columns={'Symbol': 'Company Count'}, inplace=True)
 
+    filtered_df['expected_return'] = pd.to_numeric(filtered_df['expected_return'], errors='coerce')
+    filtered_df['actual_return'] = pd.to_numeric(filtered_df['actual_return'], errors='coerce')
+
+    filtered_df['date'] = pd.to_datetime(filtered_df['date'], errors='coerce')
+
     output_filename = f'data/filtered_data_{n_days}.csv'
     filtered_df.to_csv(output_filename, index=False)
     print(f"\nFiltered data saved to {output_filename}")
     print("\nSector Group Details:")
     print(sector_group_details)
 
-    filtered_df['expected_return'] = pd.to_numeric(filtered_df['expected_return'], errors='coerce')
-    filtered_df['actual_return'] = pd.to_numeric(filtered_df['actual_return'], errors='coerce')
-
-    filtered_df['date'] = pd.to_datetime(filtered_df['date'], errors='coerce')
-
-
     # Optionally return DataFrames for further processing.
     return filtered_df
 
-
-# if __name__ == '__main__':
-#     N_DAYS = 1  # Set the desired number of days for return prediction.
-#     preprocess_data(N_DAYS)
