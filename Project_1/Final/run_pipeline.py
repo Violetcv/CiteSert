@@ -1,3 +1,4 @@
+import itertools
 import os
 import pandas as pd
 from tqdm import tqdm
@@ -27,18 +28,27 @@ def main():
     train_file = get_preprocessed_filename(N_DAYS_train)
     test_file = get_preprocessed_filename(N_DAYS_test)
     
-    if os.path.exists(train_file) and os.path.exists(test_file):
-        print("[INFO] Loading cached preprocessed data")
+    # Check and load the train data independently
+    if os.path.exists(train_file):
+        print("[INFO] Loading cached preprocessed train data")
         df_train = pd.read_csv(train_file)
+    else:
+        print(f"[INFO] Preprocessed train data file not found. Running preprocessing for N_DAYS_train = {N_DAYS_train}...")
+        df_train = preprocess_data(N_DAYS_train)
+        df_train.to_csv(train_file, index=False)
+        print(f"[INFO] Train data saved to {train_file}")
+
+    # Check and load the test data independently
+    if os.path.exists(test_file):
+        print("[INFO] Loading cached preprocessed test data")
         df_test = pd.read_csv(test_file)
     else:
-        print(f"[INFO] Running preprocessing for {N_DAYS_train} and {N_DAYS_test}")
-        df_train = preprocess_data(N_DAYS_train)
+        print(f"[INFO] Preprocessed test data file not found. Running preprocessing for N_DAYS_test = {N_DAYS_test}...")
         df_test = preprocess_data(N_DAYS_test)
-        df_train.to_csv(train_file, index=False)
         df_test.to_csv(test_file, index=False)
-    
-    print(f"[INFO] Loaded train data ({len(df_train)} of n = {N_DAYS_train} rows) and test data ({len(df_test)} of n = {N_DAYS_test} rows)")
+        print(f"[INFO] Test data saved to {test_file}")
+
+    print(f"[INFO] Loaded train data ({len(df_train)} rows for N_DAYS_train = {N_DAYS_train}) and test data ({len(df_test)} rows for N_DAYS_test = {N_DAYS_test}).")
 
     # Metrics calculation with cache check
     k_pct_results = {}

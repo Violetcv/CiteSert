@@ -72,7 +72,7 @@ def preprocess_data(n_days):
         return re.sub(r'\n.*', '', author).strip()
 
     analyst_ratings.loc[:, 'author'] = analyst_ratings['author'].apply(clean_author_name)
-    print(stock_df.columns)
+    # print(stock_df.columns)
 
     # Drop unwanted columns from stock data.
     stock_df = stock_df.drop(['Volume', 'Market capitalization as on March 28 2024(In lakhs)'], axis=1)
