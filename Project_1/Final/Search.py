@@ -51,36 +51,49 @@ def get_top_or_bottom_n_global(folder_path, col_name, top_n=5, ascending=False):
     top_n_df = combined_df_sorted.head(top_n)
     return top_n_df
 
-if __name__ == "__main__":
-    # Set the folder path where your CSV files are located.
-    folder_path = r"C:\Users\disch\Desktop\CiteSert\Project_1\VErsion_11_avlbl_cash\Output_avbl_cash"
+# In Search.py
+def save_top_configs(result_df, output_dir, metric_cols):
+    """Save top 5 configurations for multiple metrics"""
+    os.makedirs(output_dir, exist_ok=True)
     
-    # Specify the column you want to search on:
-    # Change the col_name to "max_monthly_corpus_return" for maximum values or
-    # "median_monthly_corpus_return" for median, etc.
-    # col_name = "max_monthly_corpus_return"
-    # col_name = "min_monthly_corpus_return"
-    # col_name = "avg_min_available_cash"
-    # col_name = "mean_monthly_corpus_return"
-    col_name = "median_monthly_corpus_return"
-    
-    # Set the number of top rows to display (global top n)
-    top_n = 5
+    for metric in metric_cols:
+        top_df = result_df.sort_values(metric, ascending=False).head(5)
+        filepath = os.path.join(output_dir, f"top5_{metric}.txt")
+        with open(filepath, 'w') as f:
+            f.write(f"Top 5 by {metric}:\n")
+            f.write(top_df.to_string(index=False))
+        print(f"Saved {filepath}")
 
-    # For top rows, sort descending (ascending=False). For bottom rows, set ascending=True.
-    result_df = get_top_or_bottom_n_global(folder_path, col_name, top_n, ascending=False)
+# if __name__ == "__main__":
+#     # Set the folder path where your CSV files are located.
+#     folder_path = r"C:\Users\disch\Desktop\CiteSert\Project_1\VErsion_11_avlbl_cash\Output_avbl_cash"
     
-    if not result_df.empty:
-        output_file = os.path.join(folder_path, f"global_{col_name}_results.txt")
-        with open(output_file, "w", encoding="utf-8") as f:
-            f.write(f"Top {top_n} rows (global) sorted by {col_name} (descending):\n")
-            f.write(result_df.to_string(index=False))
+#     # Specify the column you want to search on:
+#     # Change the col_name to "max_monthly_corpus_return" for maximum values or
+#     # "median_monthly_corpus_return" for median, etc.
+#     # col_name = "max_monthly_corpus_return"
+#     # col_name = "min_monthly_corpus_return"
+#     # col_name = "avg_min_available_cash"
+#     # col_name = "mean_monthly_corpus_return"
+#     col_name = "median_monthly_corpus_return"
+    
+#     # Set the number of top rows to display (global top n)
+#     top_n = 5
+
+#     # For top rows, sort descending (ascending=False). For bottom rows, set ascending=True.
+#     result_df = get_top_or_bottom_n_global(folder_path, col_name, top_n, ascending=False)
+    
+#     if not result_df.empty:
+#         output_file = os.path.join(folder_path, f"global_{col_name}_results.txt")
+#         with open(output_file, "w", encoding="utf-8") as f:
+#             f.write(f"Top {top_n} rows (global) sorted by {col_name} (descending):\n")
+#             f.write(result_df.to_string(index=False))
             
-            # Also, if you want to show bottom rows, you can compute that too:
-            bottom_df = get_top_or_bottom_n_global(folder_path, col_name, top_n, ascending=True)
-            f.write("\n\n")
-            f.write(f"Bottom {top_n} rows (global) sorted by {col_name} (ascending):\n")
-            f.write(bottom_df.to_string(index=False))
-        print(f"Results saved to {output_file}")
-    else:
-        print("No results found.") 
+#             # Also, if you want to show bottom rows, you can compute that too:
+#             bottom_df = get_top_or_bottom_n_global(folder_path, col_name, top_n, ascending=True)
+#             f.write("\n\n")
+#             f.write(f"Bottom {top_n} rows (global) sorted by {col_name} (ascending):\n")
+#             f.write(bottom_df.to_string(index=False))
+#         print(f"Results saved to {output_file}")
+#     else:
+#         print("No results found.") 

@@ -1,3 +1,5 @@
 data/adjusted_stock_data.csv 
 __pycache__/ 
 *.pyc 
+outputs/
+outputs_n5_d5/

@@ -241,6 +241,8 @@ def preprocess_data(n_days):
     filtered_df['expected_return'] = pd.to_numeric(filtered_df['expected_return'], errors='coerce')
     filtered_df['actual_return'] = pd.to_numeric(filtered_df['actual_return'], errors='coerce')
 
+    filtered_df['date'] = pd.to_datetime(filtered_df['date'], errors='coerce')
+
 
     # Optionally return DataFrames for further processing.
     return filtered_df

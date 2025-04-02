@@ -1,85 +1,96 @@
 #!/usr/bin/env python3
 import os
 import pandas as pd
+import matplotlib.pyplot as plt
 from calculate_metrics import run_rolling_analysis
-from Search import get_top_or_bottom_n_global
-from config import *  # Import all paths and parameters from config.py
+from config import *  # Import parameters only
 
-def plot_monthly_time_series(df_train, df_test, k , lookback_period, max_alloc, output_dir):
+def plot_monthly_time_series(df_train, df_test, k, lookback, max_alloc, output_dir):
     """
-    Plots the monthly corpus return time series and overlays mean/median return.
-    
-    Params:
-      monthly_df: DataFrame containing the train data with a 'month' field
-      lookback_period: Lookback period (months) used in the configuration
-      max_alloc: Maximum allocation value used in the configuration
-      output_dir: Directory to save the plot
+    Generates time series plot for a single configuration
+    Only creates new plot if it doesn't already exist
     """
-    # Regenerate the monthly results for this configuration
-    monthly_df = run_rolling_analysis(
-        df_train=df_train,
-        df_test=df_test,
-        start_date=start_date,  # Ensure these are imported from config
-        end_date=end_date,
-        k_percent=k,
-        lookback_period=lookback_period,
-        cost_per_trade=cost_per_trade,
-        corpus_fraction=corpus_fraction,
-        max_allocation_fraction=max_alloc,
-        day_offset=day_offset
-    )
+    # Generate unique filename
+    plot_filename = f"corpus_ret_lb{lookback}_ma{max_alloc:.2f}_k{k:.1f}.png"
+    plot_path = os.path.join(output_dir, plot_filename)
     
-    if monthly_df.empty or 'month' not in monthly_df.columns:
-        print(f"No data for config: k={k}, lookback={lookback_period}, alloc={max_alloc}")
+    # Skip existing plots
+    if os.path.exists(plot_path):
+        print(f"[SKIP] Plot exists: {plot_filename}")
         return
-    
-    import matplotlib.pyplot as plt
-    monthly_df = monthly_df.copy()
-    monthly_df['month'] = pd.to_datetime(monthly_df['month'])
-    monthly_df_sorted = monthly_df.sort_values('month')
 
-    corpus_pct = monthly_df_sorted['corpus_return'] * 100
-    overall_mean = corpus_pct.mean()
-    overall_median = corpus_pct.median()
+    # Generate time series data
+    try:
+        monthly_df = run_rolling_analysis(
+            df_train, df_test, start_date, end_date, k,
+            lookback, cost_per_trade, corpus_fraction,
+            max_alloc, day_offset
+        )
+    except Exception as e:
+        print(f"[ERROR] Failed to generate data for LB{lookback} MA{max_alloc:.2f} K{k:.1f}: {str(e)}")
+        return
 
+    # Validate data
+    if monthly_df.empty or 'month' not in monthly_df.columns:
+        print(f"[WARNING] No data for LB{lookback} MA{max_alloc:.2f} K{k:.1f}")
+        return
+
+    # Plotting setup
     plt.figure(figsize=(14, 7))
-    plt.plot(monthly_df_sorted['month'], corpus_pct, marker='o', linestyle='-', color='blue', label='Monthly Corpus Return')
-    plt.axhline(y=overall_mean, color='red', linestyle='--', label=f'Mean ({overall_mean:.2f}%)')
-    plt.axhline(y=overall_median, color='green', linestyle='--', label=f'Median ({overall_median:.2f}%)')
+    param_text = f"Lookback: {lookback} months\nMaxAlloc: {max_alloc:.2f}\nK: {k:.1f}%"
+    plt.gcf().text(0.82, 0.15, param_text, bbox=dict(facecolor='white', alpha=0.5))
 
-    plt.title(f'Monthly Corpus Return (%) (Lookback = {lookback_period} months, MaxAlloc = {max_alloc:.2f}, K = {k})')
+    # Data processing
+    monthly_df['month'] = pd.to_datetime(monthly_df['month'])
+    monthly_df = monthly_df.sort_values('month')
+    corpus_pct = monthly_df['corpus_return'] * 100
+    
+    # Calculate metrics
+    mean_return = corpus_pct.mean()
+    median_return = corpus_pct.median()
+
+    # Plot construction
+    plt.plot(monthly_df['month'], corpus_pct, 
+             marker='o', linestyle='-', color='blue', 
+             label='Monthly Returns')
+    plt.axhline(mean_return, color='red', linestyle='--', 
+                label=f'Mean ({mean_return:.2f}%)')
+    plt.axhline(median_return, color='green', linestyle='--', 
+                label=f'Median ({median_return:.2f}%)')
+
+    # Final touches
+    plt.title(f'Monthly Corpus Returns (LB={lookback} MA={max_alloc:.2f} K={k:.1f})')
     plt.xlabel('Month')
-    plt.ylabel('Corpus Return (%)')
+    plt.ylabel('Return (%)')
     plt.grid(True)
     plt.legend()
     plt.tight_layout()
 
-    filename = os.path.join(output_dir, f'monthly_time_series_{lookback_period}_{max_alloc:.2f}_{k}pct.png')
-    plt.savefig(filename)
+    # Save output
+    plt.savefig(plot_path)
     plt.close()
-    print(f"[INFO] Monthly time series plot saved to: {filename}")
+    print(f"[SUCCESS] Saved plot: {plot_filename}")
 
-def process_top_configs(df_train):
-    """
-    Processes and plots top configurations.
-    This function searches for the top configurations based on the given search metric,
-    and then generates monthly time series plots for each configuration.
+def process_top_configs(results_df, df_train, df_test, output_dir):
+    """Handles top configurations from precomputed results"""
+    print(f"\n[PHASE] Processing top {top_n_results} configurations")
     
-    Params:
-      df_train: Training DataFrame already loaded in the previous file.
-    """
-    print(f"[INFO] Searching for top {top_n_results} configurations based on {search_metric}...")
-    top_configs = get_top_or_bottom_n_global(output_dir, search_metric, top_n=top_n_results)
-
+    # Get top configurations
+    top_configs = results_df.sort_values(
+        search_metric, 
+        ascending=False
+    ).head(top_n_results)
+    
     if top_configs.empty:
-        print("[WARNING] No top configurations found. Skipping plotting.")
+        print("[WARNING] No valid configurations found")
         return
-
-    for _, row in top_configs.iterrows():
-        lookback = int(row['lookback'])
-        max_alloc = float(row['max_alloc'])
-        k = row['k_percent']
-        print(f"[INFO] Plotting for lookback: {lookback}, max_alloc: {max_alloc}")
-        plot_monthly_time_series(df_train, k ,  lookback, max_alloc, output_dir)
-
-    print("[INFO] Completed plotting top configurations.")
+    
+    # Plot each configuration
+    for _, config in top_configs.iterrows():
+        plot_monthly_time_series(
+            df_train, df_test,
+            k=float(config['k_percent']),
+            lookback=int(config['lookback']),
+            max_alloc=float(config['max_alloc']),
+            output_dir=output_dir
+        )

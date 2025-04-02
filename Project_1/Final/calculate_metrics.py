@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from datetime import timedelta
 import matplotlib.pyplot as plt
-from tqdm import tqdm
+
 
 def get_best_authors(df, start_date, end_date, k_percent):
     """
@@ -324,15 +324,15 @@ def calculate_metrics(df_train, df_test, start_date, end_date, lookback_period, 
     # excluded_months = [pd.Timestamp('2019-07-01'), pd.Timestamp('2018-06-01')]
     
     iteration_results = []
-    print("Running analyses for each K%...")
+    # print("Running analyses for each K%...")
 
     # Ensure k_percentages is an array even if a single number is passed.
     k_percentages = np.atleast_1d(k_percentages)
 
     # (Optionally print its type for debugging)
-    print("Inside calculate_metrics, type of k_percentages:", type(k_percentages))
+    # print("Inside calculate_metrics, type of k_percentages:", type(k_percentages))
 
-    for k in tqdm(k_percentages, desc="Sweeping through K%"):
+    for k in k_percentages:
         k_float = float(k)
         monthly_df = run_rolling_analysis(df_train, df_test, start_date, end_date, k_float, lookback_period,cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset)
         
