@@ -3,5 +3,6 @@ __pycache__/
 *.pyc 
 outputs/
 outputs_n5_d5/
+outputs_n2_d2/
 temp.txt
 temp.py

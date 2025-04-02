@@ -304,7 +304,6 @@ def plot_performance_metrics(final_df, lookback_period, max_alloc, output_dir):
     filename = os.path.join(output_dir, f'performance_metrics_{lookback_period}_{max_alloc:.2f}.png')
     plt.savefig(filename)
     plt.close()
-    print(f"[INFO] Plot saved to: {filename}")
 
 def calculate_metrics(df_train, df_test, start_date, end_date, lookback_period, k_percentages, 
          cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset, output_dir):
