@@ -23,7 +23,7 @@ lookback_months = np.arange(19, 25, 1)
 corpus_fraction = 0.8
 cost_per_trade = 0.0021
 max_allocation_values = np.arange(0.10, 0.41, 0.01)  # Fraction of corpus to allocate
-day_offset = 2  # Holding period (in business days)
+day_offset = 5  # Holding period (in business days)
 
 
 
@@ -36,3 +36,5 @@ DEBUG_LIMIT = 2000  # Number of rows to use when debugging
 top_n_results = 5  # Number of best configurations to consider
 search_metric = "median_monthly_corpus_return"  # Can be "mean_monthly_corpus_return" or others
 # search_metric_2 = "mean_monthly_corpus_return"
+
+search_metrics = ['mean_monthly_corpus_return', 'median_monthly_corpus_return']

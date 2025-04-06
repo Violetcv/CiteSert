@@ -53,17 +53,26 @@ def get_top_or_bottom_n_global(folder_path, col_name, top_n=5, ascending=False):
 
 # In Search.py
 def save_top_configs(result_df, output_dir, metric_cols):
-    """Save top 5 configurations for multiple metrics"""
+    """Save top configurations for multiple metrics"""
     os.makedirs(output_dir, exist_ok=True)
     
     for metric in metric_cols:
+        # Save top 5 for reference
         top_df = result_df.sort_values(metric, ascending=False).head(5)
         filepath = os.path.join(output_dir, f"top5_{metric}.txt")
         with open(filepath, 'w') as f:
             f.write(f"Top 5 by {metric}:\n")
             f.write(top_df.to_string(index=False))
-        print(f"Saved {filepath}")
-
+        
+        # Save top 1 for quick reference
+        top1_df = result_df.sort_values(metric, ascending=False).head(1)
+        filepath = os.path.join(output_dir, f"top1_{metric}.txt")
+        with open(filepath, 'w') as f:
+            f.write(f"Best configuration for {metric}:\n")
+            f.write(top1_df.to_string(index=False))
+            
+        print(f"Saved {os.path.basename(filepath)}")
+        
 # if __name__ == "__main__":
 #     # Set the folder path where your CSV files are located.
 #     folder_path = r"C:\Users\disch\Desktop\CiteSert\Project_1\VErsion_11_avlbl_cash\Output_avbl_cash"

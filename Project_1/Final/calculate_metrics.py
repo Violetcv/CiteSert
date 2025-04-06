@@ -29,7 +29,6 @@ def get_best_authors(df, start_date, end_date, k_percent):
     n_select = max(1, int(np.ceil(len(author_performance) * k_percent / 100)))
     return author_performance.nlargest(n_select, 'total_perf')[['author']]
 
-
 def calculate_monthly_performance(df, best_authors_df, target_month, cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset):
     """
     For a single month (target_month), restricted to best_authors_df:
@@ -304,14 +303,46 @@ def plot_performance_metrics(final_df, lookback_period, max_alloc, output_dir):
     filename = os.path.join(output_dir, f'performance_metrics_{lookback_period}_{max_alloc:.2f}.png')
     plt.savefig(filename)
     plt.close()
-    print(f"[INFO] Plot saved to: {filename}")
+
+def plot_monthly_time_series(monthly_df, lookback_period, max_alloc, output_dir):
+    """
+    Given monthly_df (which has at least:
+      - 'month' (as datetime)
+      - 'corpus_return' as a fraction),
+    this function plots the time series of monthly corpus_return (in %)
+    and overlays horizontal lines for the overall mean and median (also in %).
+    The plot title and file name include the lookback period and max_alloc.
+    """
+    import matplotlib.pyplot as plt
+    # Ensure month column is datetime and sort by month
+    monthly_df = monthly_df.copy()
+    monthly_df['month'] = pd.to_datetime(monthly_df['month'])
+    monthly_df_sorted = monthly_df.sort_values('month')
+    
+    # Convert corpus_return to percentage.
+    corpus_pct = monthly_df_sorted['corpus_return'] * 100
+    overall_mean = corpus_pct.mean()
+    overall_median = corpus_pct.median()
+    
+    plt.figure(figsize=(14, 7))
+    plt.plot(monthly_df_sorted['month'], corpus_pct, marker='o', linestyle='-', color='blue', label='Monthly Corpus Return')
+    plt.axhline(y=overall_mean, color='red', linestyle='--', label=f'Mean ({overall_mean:.2f}%)')
+    plt.axhline(y=overall_median, color='green', linestyle='--', label=f'Median ({overall_median:.2f}%)')
+    plt.title(f'Monthly Corpus Return (%) (Lookback = {lookback_period} months, MaxAlloc = {max_alloc:.2f})')
+    plt.xlabel('Month')
+    plt.ylabel('Corpus Return (%)')
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    filename = os.path.join(output_dir, f'monthly_time_series_{lookback_period}_{max_alloc:.2f}.png')
+    plt.savefig(filename)
+    plt.close()
+    print(f"[INFO] Monthly time series plot saved to: {filename}")
 
 def calculate_metrics(df_train, df_test, start_date, end_date, lookback_period, k_percentages, 
          cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset, output_dir):
-    
     df_train['date'] = pd.to_datetime(df_train['date'])
     df_test['date'] = pd.to_datetime(df_test['date'])
-    
     output_dir = os.path.abspath(output_dir)
     os.makedirs(output_dir, exist_ok=True)
     print(f"Using output directory: {output_dir}")
@@ -320,25 +351,19 @@ def calculate_metrics(df_train, df_test, start_date, end_date, lookback_period, 
     end_ts = pd.to_datetime(end_date)
     num_months = ((end_ts.year - start_ts.year) * 12) + (end_ts.month - start_ts.month) + 1
     
-    # # Define a list of months to exclude from the final aggregation (if necessary)
-    # excluded_months = [pd.Timestamp('2019-07-01'), pd.Timestamp('2018-06-01')]
+    # Define a list of months to exclude from the final aggregation (if necessary)
+    excluded_months = [pd.Timestamp('2019-07-01'), pd.Timestamp('2018-06-01')]
     
     iteration_results = []
-    # print("Running analyses for each K%...")
-
-    # Ensure k_percentages is an array even if a single number is passed.
-    k_percentages = np.atleast_1d(k_percentages)
-
-    # (Optionally print its type for debugging)
-    # print("Inside calculate_metrics, type of k_percentages:", type(k_percentages))
-
+    print("Running analyses for each K%...")
+    
     for k in k_percentages:
-        k_float = float(k)
-        monthly_df = run_rolling_analysis(df_train, df_test, start_date, end_date, k_float, lookback_period,cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset)
+        monthly_df = run_rolling_analysis(df_train, df_test, start_date, end_date, k, lookback_period, 
+                                          cost_per_trade, corpus_fraction, max_allocation_fraction, day_offset)
         
-        # # Remove the undesired months from the aggregated monthly_df
-        # if not monthly_df.empty:
-        #     monthly_df = monthly_df[~monthly_df['month'].isin(excluded_months)]
+        # Remove the undesired months from the aggregated monthly_df
+        if not monthly_df.empty:
+            monthly_df = monthly_df[~monthly_df['month'].isin(excluded_months)]
         
         if monthly_df.empty:
             iteration_results.append({

@@ -437,8 +437,8 @@ def main(df_train, df_test, start_date, end_date, lookback_period, k_percentages
 
 if __name__ == "__main__":
     # File paths (update as needed)
-    file_path_d5 = r"C:\Users\disch\Desktop\CiteSert\Project_1\Version6_40krows_3metrics\input_data\filtered_data_2.csv"
-    file_path_d1 = r"C:\Users\disch\Desktop\CiteSert\Project_1\Version6_40krows_3metrics\input_data\filtered_data_2_n1.csv"
+    file_path_d5 = r"/Users/chhaviverma/Documents/Development/CiteSert/Project_1/Version6_40krows_3metrics/input_data/filtered_data_2.csv"
+    file_path_d1 = r"/Users/chhaviverma/Documents/Development/CiteSert/Project_1/Version6_40krows_3metrics/input_data/filtered_data_2_n1.csv"
 
     # Read data
     df_d5 = pd.read_csv(file_path_d5).dropna(subset=['expected_return', 'actual_return'])

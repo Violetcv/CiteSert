@@ -10,9 +10,12 @@ def plot_monthly_time_series(df_train, df_test, k, lookback, max_alloc, output_d
     Generates time series plot for a single configuration
     Only creates new plot if it doesn't already exist
     """
+    df_train['date'] = pd.to_datetime(df_train['date'])
+    df_test['date'] = pd.to_datetime(df_test['date'])
+
     # Generate unique filename
     plot_filename = f"corpus_ret_lb{lookback}_ma{max_alloc:.2f}_k{k:.1f}.png"
-    plot_path = os.path.join(output_dir, plot_filename)
+    plot_path = os.path.join(output_dir, "top_config", plot_filename)
     
     # Skip existing plots
     if os.path.exists(plot_path):
@@ -75,6 +78,9 @@ def process_top_configs(results_df, df_train, df_test, output_dir):
     """Handles top configurations from precomputed results"""
     print(f"\n[PHASE] Processing top {top_n_results} configurations")
     
+    df_train['date'] = pd.to_datetime(df_train['date'])
+    df_test['date'] = pd.to_datetime(df_test['date'])
+
     # Get top configurations
     top_configs = results_df.sort_values(
         search_metric, 
