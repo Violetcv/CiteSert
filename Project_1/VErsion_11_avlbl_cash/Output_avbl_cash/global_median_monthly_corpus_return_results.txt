@@ -1,10 +1,97 @@
 Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
+Top 5 rows (global) sorted by median_monthly_corpus_return (descending):
  mean_of_mean_performance  number_of_monthly_predictions  combined_metric  mean_monthly_corpus_return  std_monthly_corpus_return  min_monthly_corpus_return  min_month  max_monthly_corpus_return  max_month  median_monthly_corpus_return  mode_monthly_corpus_return  avg_min_available_cash  k_percent                                  filename
                 -0.002207                      83.416667        -0.153695                    0.007749                   0.039492                  -0.064979 2019-06-01                   0.110989 2020-08-01                      0.006778                   -0.064979                0.015031        5.0 k_percent_performance_results_19_0.13.csv
                 -0.002207                      83.416667        -0.153695                    0.007483                   0.038888                  -0.064021 2019-06-01                   0.110356 2020-08-01                      0.006699                   -0.064021                0.019008        5.0 k_percent_performance_results_19_0.12.csv
                 -0.002190                      86.933333        -0.186490                    0.010954                   0.054595                  -0.107024 2022-05-01                   0.182890 2018-07-01                      0.006698                   -0.107024                0.008793        5.5 k_percent_performance_results_19_0.32.csv
                 -0.002503                      70.500000        -0.108085                    0.007933                   0.038594                  -0.059093 2022-05-01                   0.110356 2020-08-01                      0.006560                   -0.059093                0.018273        3.0 k_percent_performance_results_19_0.12.csv
                 -0.002404                      75.350000        -0.101909                    0.007772                   0.038820                  -0.059093 2022-05-01                   0.110356 2020-08-01                      0.006560                   -0.059093                0.017968        3.5 k_percent_performance_results_19_0.12.csv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Bottom 5 rows (global) sorted by median_monthly_corpus_return (ascending):
  mean_of_mean_performance  number_of_monthly_predictions  combined_metric  mean_monthly_corpus_return  std_monthly_corpus_return  min_monthly_corpus_return  min_month  max_monthly_corpus_return  max_month  median_monthly_corpus_return  mode_monthly_corpus_return  avg_min_available_cash  k_percent                                  filename

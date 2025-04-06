@@ -47,6 +47,8 @@ def plot_monthly_time_series(df_train, df_test, k, lookback, max_alloc, output_d
     monthly_df['month'] = pd.to_datetime(monthly_df['month'])
     monthly_df = monthly_df.sort_values('month')
     corpus_pct = monthly_df['corpus_return'] * 100
+
+    print(monthly_df)
     
     # Calculate metrics
     mean_return = corpus_pct.mean()

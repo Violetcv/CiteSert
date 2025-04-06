@@ -1,0 +1,3 @@
+Best configuration for mean_monthly_corpus_return:
+ mean_of_mean_performance  number_of_monthly_predictions  combined_metric  mean_monthly_corpus_return  std_monthly_corpus_return  min_monthly_corpus_return  min_month  max_monthly_corpus_return  max_month  median_monthly_corpus_return  mode_monthly_corpus_return  avg_min_available_cash  k_percent  lookback  max_alloc
+                 -0.00127                          107.4        -0.344446                    0.025461                   0.044192                  -0.007414 2019-05-01                    0.11821 2020-06-01                      0.003389                   -0.007414                0.008721        9.5        19       0.28

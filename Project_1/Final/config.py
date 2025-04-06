@@ -6,8 +6,8 @@ import numpy as np
 BASE_DIR = os.path.abspath(".")  # Adjust if needed
 data_dir = os.path.join(BASE_DIR, "data") # 3 files
 
-N_DAYS_train = 5
-N_DAYS_test = 5
+N_DAYS_train = 3
+N_DAYS_test = 3
 
 output_dir = os.path.join(BASE_DIR, f"outputs_n{N_DAYS_train}_d{N_DAYS_test}") # store filtered_data, k percent analysis files and graphs
 
